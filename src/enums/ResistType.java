@@ -1,0 +1,5 @@
+package enums;
+
+public enum ResistType {
+	ALL, PHYSICAL, MAGIC, PIERCING, BLUDGEONING, SLASHING, FIRE, COLD, ARCANE, NONE
+}

@@ -1,0 +1,67 @@
+-- Help --
+
+---
+
+/create
+	char | character	<-n "name">
+	item				<-l level>
+
+Creates a new character or item. A character may be given a name at creation. An item may be created at a given level (default being 1).
+	
+---
+
+/print
+	char | character	<-i index> | <-n "name"> | <-a>
+	item				<-b "name"> [<-i index> | <-a>]
+	
+Prints either a list of characters or items, or a specific entity. Either an index or a name is required for an individual entity.
+The optional tag of -b may be used for an item to denote its location as a character's bag.
+	
+---
+
+/edit
+
+Edits an entity - Not yet implemented.
+
+---
+
+/give
+	[<-i char index> | <-n "char name">] <-i item index>
+	
+Gives a character an item and places it in their bags (if there is room). Specify the character index or name, followed by the index of the item.
+
+---
+
+/equip
+	[<-i char index> | <-n "char name">] <-b "char name"> <-i item index>
+	
+Equips a character with an item, with the optional tag to denote the character's bag in which the item resides.
+
+---
+
+/save
+	[<-i char index> | <-n "char name">] <char name>
+
+Saves the character (if it exits) to an xml file.
+
+---
+
+/load
+	<char name>
+	
+Loads the character (if it exists) from an xml file.
+
+---
+
+/help
+	<command>
+	
+Shows the help dialog. If specified, shows only the help for an individual command.
+
+---
+
+/quit
+
+Exits the program.
+
+---

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character>
+  <name value="Bob"/>
+  <baseStats>
+    <strength value="3.0"/>
+    <stamina value="3.0"/>
+    <constitution value="3.0"/>
+    <intelligence value="3.0"/>
+    <spirit value="3.0"/>
+    <level value="1"/>
+    <totalHealth value="10.0"/>
+	<currentHealth value="10.0"/>
+    <healthRegenRate value="5.0"/>
+    <totalFocus value="5.0"/>
+	<currentFocus value="5.0"/>
+    <focusRegenRate value="5.0"/>
+    <totalMana value="5.0"/>
+	<currentMana value="5.0"/>
+    <manaRegenRate value="5.0"/>
+    <carryCapacity value="0.0"/>
+    <experience value="0"/>
+    <levelBoundry value="100"/>
+  </baseStats>
+  <modifiedStats>
+    <strength value="22.8"/>
+    <stamina value="25.0"/>
+    <constitution value="20.6"/>
+    <intelligence value="17.3"/>
+    <spirit value="28.3"/>
+    <level value="1"/>
+    <totalHealth value="216.0"/>
+	<currentHealth value="216.0"/>
+    <healthRegenRate value="9.12"/>
+    <totalFocus value="119.0"/>
+	<currentFocus value="119.0"/>
+    <focusRegenRate value="10.0"/>
+    <totalMana value="91.5"/>
+	<currentMana value="91.5"/>
+    <manaRegenRate value="10.66"/>
+    <carryCapacity value="0.0"/>
+    <experience value="0"/>
+    <levelBoundry value="100"/>
+  </modifiedStats>
+  <equipment>
+    <wearableItem>
+      <name value="Metal Helm of Strength"/>
+      <slotNum value="0"/>
+      <strength value="5.5"/>
+      <stamina value="1.1"/>
+      <constitution value="0.0"/>
+      <intelligence value="5.5"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="HELM"/>
+      <armourMaterial value="METAL"/>
+      <armourValue value="11.81"/>
+      <resistType value="ARCANE"/>
+      <resistValue value="4.29"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Leather Shoulders of Strength"/>
+      <slotNum value="1"/>
+      <strength value="5.5"/>
+      <stamina value="2.2"/>
+      <constitution value="0.0"/>
+      <intelligence value="0.0"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="SHOULDERS"/>
+      <armourMaterial value="LEATHER"/>
+      <armourValue value="4.62"/>
+      <resistType value="COLD"/>
+      <resistValue value="0.26"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Leather Amulet of Stamina"/>
+      <slotNum value="2"/>
+      <strength value="0.0"/>
+      <stamina value="5.5"/>
+      <constitution value="3.3"/>
+      <intelligence value="0.0"/>
+      <spirit value="3.3"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="AMULET"/>
+      <armourMaterial value="LEATHER"/>
+      <armourValue value="7.51"/>
+      <resistType value="NONE"/>
+      <resistValue value="4.55"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Cloth Chest of Spirit"/>
+      <slotNum value="3"/>
+      <strength value="0.0"/>
+      <stamina value="0.0"/>
+      <constitution value="0.0"/>
+      <intelligence value="1.1"/>
+      <spirit value="5.5"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="CHEST"/>
+      <armourMaterial value="CLOTH"/>
+      <armourValue value="2.8"/>
+      <resistType value="MAGIC"/>
+      <resistValue value="5.26"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Cloth Bracers of Constitution"/>
+      <slotNum value="4"/>
+      <strength value="0.0"/>
+      <stamina value="2.2"/>
+      <constitution value="3.3"/>
+      <intelligence value="0.0"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="BRACERS"/>
+      <armourMaterial value="CLOTH"/>
+      <armourValue value="4.03"/>
+      <resistType value="COLD"/>
+      <resistValue value="2.89"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Metal Gloves of Intelligence"/>
+      <slotNum value="5"/>
+      <strength value="0.0"/>
+      <stamina value="0.0"/>
+      <constitution value="0.0"/>
+      <intelligence value="2.2"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="GLOVES"/>
+      <armourMaterial value="METAL"/>
+      <armourValue value="7.97"/>
+      <resistType value="FIRE"/>
+      <resistValue value="4.63"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Leather Belt of Intelligence"/>
+      <slotNum value="6"/>
+      <strength value="0.0"/>
+      <stamina value="0.0"/>
+      <constitution value="2.2"/>
+      <intelligence value="5.5"/>
+      <spirit value="3.3"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="BELT"/>
+      <armourMaterial value="LEATHER"/>
+      <armourValue value="9.75"/>
+      <resistType value="FIRE"/>
+      <resistValue value="1.65"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Metal Grieves of Strength"/>
+      <slotNum value="7"/>
+      <strength value="3.3"/>
+      <stamina value="2.2"/>
+      <constitution value="0.0"/>
+      <intelligence value="0.0"/>
+      <spirit value="3.3"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="GRIEVES"/>
+      <armourMaterial value="METAL"/>
+      <armourValue value="0.99"/>
+      <resistType value="BLUDGEONING"/>
+      <resistValue value="3.65"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Leather Boots of Constitution"/>
+      <slotNum value="8"/>
+      <strength value="0.0"/>
+      <stamina value="0.0"/>
+      <constitution value="3.3"/>
+      <intelligence value="0.0"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="BOOTS"/>
+      <armourMaterial value="LEATHER"/>
+      <armourValue value="1.93"/>
+      <resistType value="ALL"/>
+      <resistValue value="5.46"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Cloth Ring of Spirit"/>
+      <slotNum value="9"/>
+      <strength value="0.0"/>
+      <stamina value="0.0"/>
+      <constitution value="1.1"/>
+      <intelligence value="0.0"/>
+      <spirit value="5.5"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="RING"/>
+      <armourMaterial value="CLOTH"/>
+      <armourValue value="1.23"/>
+      <resistType value="PIERCING"/>
+      <resistValue value="4.21"/>
+    </wearableItem>
+    <wearableItem>
+      <name value="Metal Ring of Spirit"/>
+      <slotNum value="9"/>
+      <strength value="0.0"/>
+      <stamina value="0.0"/>
+      <constitution value="0.0"/>
+      <intelligence value="0.0"/>
+      <spirit value="4.4"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="RING"/>
+      <armourMaterial value="METAL"/>
+      <armourValue value="1.6"/>
+      <resistType value="COLD"/>
+      <resistValue value="1.64"/>
+    </wearableItem>
+    <wieldableItem>
+      <name value="Fire Sword of Stamina"/>
+      <slotNum value="12"/>
+      <strength value="0.0"/>
+      <stamina value="3.3"/>
+      <constitution value="3.3"/>
+      <intelligence value="0.0"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="SWORD"/>
+      <handsRequired value="1"/>
+      <damageType value="FIRE"/>
+      <minDamage value="7.73"/>
+      <maxDamage value="10.49"/>
+    </wieldableItem>
+    <wearableItem>
+      <name value="Cloth Shield of Strength"/>
+      <slotNum value="13"/>
+      <strength value="5.5"/>
+      <stamina value="5.5"/>
+      <constitution value="1.1"/>
+      <intelligence value="0.0"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="SHIELD"/>
+      <armourMaterial value="CLOTH"/>
+      <armourValue value="1.84"/>
+      <resistType value="ALL"/>
+      <resistValue value="0.82"/>
+    </wearableItem>
+  </equipment>
+  <bag>
+    <size value="20"/>
+  </bag>
+</character>

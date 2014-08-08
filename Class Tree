@@ -1,0 +1,26 @@
+Class tree:
+
+Character
+
+StatBlock
+	ItemStatBlock
+		ArmourStatBlock
+		WeaponStatBlock
+	CharacterStatBlock
+	MonsterStatBlock
+	
+EquipmentBlock
+
+Bag
+
+Item
+	WearableItem
+	WieldableItem
+	
+ItemSlot
+
+Enums
+
+Monster
+
+CharacterSheetGUI
