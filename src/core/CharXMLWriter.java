@@ -152,42 +152,13 @@ public class CharXMLWriter {
 	}
 	
 	private void outputEquipment(Document doc, Element parent, EquipmentBlock equipmentBlock){
-		/*Element body = doc.createElement("body");
-		parent.appendChild(body);
-		outputEquipmentArray(doc, body, equipmentBlock.getBody(), "wearableItem");
-		
-		Element hands = doc.createElement("hands");
-		parent.appendChild(hands);
-		outputEquipmentArray(doc, hands, equipmentBlock.getHands(), "wieldableItem");*/
-		
 		outputEquipmentArray(doc, parent, equipmentBlock.getEquipment());
 	}
 	
 	private void outputEquipmentArray(Document doc, Element parent, Item[] array){
 		Element type, temp;
 		Item tempItem;
-		 String itemType;
-		/*for(int i = 0; i < array.length; i++){
-			if(array[i] != null){
-				tempItem = array[i];
-				
-				item = doc.createElement(itemType);
-				parent.appendChild(item);
-				
-				temp = doc.createElement("name");
-				temp.setAttribute("value", tempItem.getName());
-				item.appendChild(temp);
-				
-				temp = doc.createElement("slotNum");
-				temp.setAttribute("value", tempItem.getSlotNum()+"");
-				item.appendChild(temp);
-				
-				switch(itemType){
-				case "wearableItem": outputArmourStatBlock(doc, item, ((WearableItem) tempItem).getStats()); break;
-				case "wieldableItem": outputWeaponStatBlock(doc, item, ((WieldableItem) tempItem).getStats()); break;
-				}
-			}
-		}*/
+		String itemType;
 		for(int i = 0; i < array.length; i++){
 			if(array[i] != null){
 				try{

@@ -27,18 +27,12 @@ import character.Character;
 
 public class MapScreenGUI extends JFrame {
 	
-	//pointer to have a reference for showing character stats etc
-	private Character currChar;
+	
 
 	private JPanel contentPane;
 	private JLayeredPane panelCharSheet;
+	private CharacterVitalStatisticsPanel panelVitalStats;
 	private JScrollPane scrollPaneQuests;
-	private JLabel lblName;
-	private JLabel lblPathLine;
-	private JLabel lblCurrentHP;
-	private JLabel lblCurrentFocus;
-	private JLabel lblCurrentMana;
-	private JLabel lblCurrentExp;
 
 	/**
 	 * Launch the application.
@@ -60,7 +54,7 @@ public class MapScreenGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public MapScreenGUI(Character currChar, ActionListener charSheetAL) {
-		this.currChar = currChar;
+		//this.currChar = currChar;
 		
 		
 		setTitle("World Map");
@@ -73,7 +67,7 @@ public class MapScreenGUI extends JFrame {
 		
 		JLayeredPane panel = new JLayeredPane();
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(0, 0, 982, 655);
+		panel.setBounds(0, 0, 1084, 712);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -86,69 +80,33 @@ public class MapScreenGUI extends JFrame {
 		panel.add(btnTestCombat);
 		
 		panelCharSheet = new JLayeredPane();
-		panelCharSheet.setBounds(0, 25, 193, 185);
+		panelCharSheet.setBounds(0, 25, 192, 157);
 		panel.add(panelCharSheet);
 		GridBagLayout gbl_panelCharSheet = new GridBagLayout();
-		gbl_panelCharSheet.columnWidths = new int[] {192, 0};
-		gbl_panelCharSheet.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_panelCharSheet.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_panelCharSheet.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panelCharSheet.columnWidths = new int[] {191, 0};
+		gbl_panelCharSheet.rowHeights = new int[]{0, 0, 0};
+		gbl_panelCharSheet.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_panelCharSheet.rowWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
 		panelCharSheet.setVisible(false);
 		panelCharSheet.setLayout(gbl_panelCharSheet);
 		
-		lblName = new JLabel("Name");
-		GridBagConstraints gbc_lblName = new GridBagConstraints();
-		gbc_lblName.anchor = GridBagConstraints.WEST;
-		gbc_lblName.insets = new Insets(0, 0, 5, 0);
-		gbc_lblName.gridx = 0;
-		gbc_lblName.gridy = 0;
-		panelCharSheet.add(lblName, gbc_lblName);
-		
-		lblPathLine = new JLabel("Level Path line");
-		GridBagConstraints gbc_lblPathLine = new GridBagConstraints();
-		gbc_lblPathLine.anchor = GridBagConstraints.WEST;
-		gbc_lblPathLine.insets = new Insets(0, 0, 5, 0);
-		gbc_lblPathLine.gridx = 0;
-		gbc_lblPathLine.gridy = 1;
-		panelCharSheet.add(lblPathLine, gbc_lblPathLine);
-		
-		lblCurrentHP = new JLabel("current HP");
-		GridBagConstraints gbc_lblCurrentHP = new GridBagConstraints();
-		gbc_lblCurrentHP.insets = new Insets(0, 0, 5, 0);
-		gbc_lblCurrentHP.gridx = 0;
-		gbc_lblCurrentHP.gridy = 2;
-		panelCharSheet.add(lblCurrentHP, gbc_lblCurrentHP);
-		
-		lblCurrentFocus = new JLabel("current Focus");
-		GridBagConstraints gbc_lblCurrentFocus = new GridBagConstraints();
-		gbc_lblCurrentFocus.insets = new Insets(0, 0, 5, 0);
-		gbc_lblCurrentFocus.gridx = 0;
-		gbc_lblCurrentFocus.gridy = 3;
-		panelCharSheet.add(lblCurrentFocus, gbc_lblCurrentFocus);
-		
-		lblCurrentMana = new JLabel("current Mana");
-		GridBagConstraints gbc_lblCurrentMana = new GridBagConstraints();
-		gbc_lblCurrentMana.insets = new Insets(0, 0, 5, 0);
-		gbc_lblCurrentMana.gridx = 0;
-		gbc_lblCurrentMana.gridy = 4;
-		panelCharSheet.add(lblCurrentMana, gbc_lblCurrentMana);
-		
-		lblCurrentExp = new JLabel("current exp");
-		GridBagConstraints gbc_lblCurrentExp = new GridBagConstraints();
-		gbc_lblCurrentExp.insets = new Insets(0, 0, 5, 0);
-		gbc_lblCurrentExp.gridx = 0;
-		gbc_lblCurrentExp.gridy = 5;
-		panelCharSheet.add(lblCurrentExp, gbc_lblCurrentExp);
+		panelVitalStats = new CharacterVitalStatisticsPanel(currChar);
+		GridBagConstraints gbc_panelVitalStats = new GridBagConstraints();
+		gbc_panelVitalStats.insets = new Insets(0, 0, 5, 0);
+		gbc_panelVitalStats.fill = GridBagConstraints.BOTH;
+		gbc_panelVitalStats.gridx = 0;
+		gbc_panelVitalStats.gridy = 0;
+		panelCharSheet.add(panelVitalStats, gbc_panelVitalStats);
 		
 		JButton btnShowDetailedSheet = new JButton("Show Detailed Sheet");
 		btnShowDetailedSheet.addActionListener(charSheetAL);
-		GridBagConstraints gbc_btnShowDetailedSheet = new GridBagConstraints();
-		gbc_btnShowDetailedSheet.gridx = 0;
-		gbc_btnShowDetailedSheet.gridy = 6;
-		panelCharSheet.add(btnShowDetailedSheet, gbc_btnShowDetailedSheet);
+		GridBagConstraints gbc_button = new GridBagConstraints();
+		gbc_button.gridx = 0;
+		gbc_button.gridy = 1;
+		panelCharSheet.add(btnShowDetailedSheet, gbc_button);
 		
 		scrollPaneQuests = new JScrollPane();
-		scrollPaneQuests.setBounds(192, 25, 186, 257);
+		scrollPaneQuests.setBounds(192, 25, 187, 257);
 		scrollPaneQuests.setVisible(false);
 		panel.add(scrollPaneQuests);
 		
@@ -181,17 +139,12 @@ public class MapScreenGUI extends JFrame {
 		panel.add(tglbtnQuestLog);
 		
 		JButton btnSettings = new JButton("Settings");
-		btnSettings.setBounds(885, 0, 97, 25);
+		btnSettings.setBounds(987, 0, 97, 25);
 		panel.add(btnSettings);
 	}
 	
-	
-	public void updateCharSheet(){
-		lblName.setText(currChar.getName());
-		lblPathLine.setText("Level " + currChar.getModifiedStats().getLevel() + " blah");
-		lblCurrentHP.setText("Current HP: " + currChar.getModifiedStats().getCurrentHealth() + " / "  + currChar.getModifiedStats().getTotalHealth());
-		lblCurrentFocus.setText("Current Focus: " + currChar.getModifiedStats().getCurrentFocus() + " / "  + currChar.getModifiedStats().getTotalFocus());
-		lblCurrentMana.setText("Current Mana: " + currChar.getModifiedStats().getCurrentMana() + " / "  + currChar.getModifiedStats().getTotalMana());
-		lblCurrentExp.setText("Current EXP: " + currChar.getModifiedStats().getExperience() + " / "  + currChar.getModifiedStats().getLevelBoundry());
+	private void updateCharSheet(){
+		panelVitalStats.updateCharSheet();
 	}
+	
 }

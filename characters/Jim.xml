@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character>
+  <name value="Jim"/>
+  <baseStats>
+    <strength value="5.0"/>
+    <stamina value="4.0"/>
+    <constitution value="4.0"/>
+    <intelligence value="2.0"/>
+    <spirit value="0.0"/>
+    <level value="1"/>
+    <totalHealth value="50.0"/>
+    <currentHealth value="50.0"/>
+    <healthRegenRate value="5.8"/>
+    <totalFocus value="30.0"/>
+    <currentFocus value="30.0"/>
+    <focusRegenRate value="5.8"/>
+    <totalMana value="15.0"/>
+    <currentMana value="15.0"/>
+    <manaRegenRate value="5.0"/>
+    <carryCapacity value="0.0"/>
+    <experience value="0"/>
+    <levelBoundry value="100"/>
+  </baseStats>
+  <modifiedStats>
+    <strength value="5.0"/>
+    <stamina value="4.0"/>
+    <constitution value="4.0"/>
+    <intelligence value="2.0"/>
+    <spirit value="0.0"/>
+    <level value="1"/>
+    <totalHealth value="50.0"/>
+    <currentHealth value="50.0"/>
+    <healthRegenRate value="5.8"/>
+    <totalFocus value="30.0"/>
+    <currentFocus value="30.0"/>
+    <focusRegenRate value="5.8"/>
+    <totalMana value="15.0"/>
+    <currentMana value="15.0"/>
+    <manaRegenRate value="5.0"/>
+    <carryCapacity value="0.0"/>
+    <experience value="0"/>
+    <levelBoundry value="100"/>
+  </modifiedStats>
+  <equipment/>
+  <bag>
+    <size value="20"/>
+  </bag>
+</character>

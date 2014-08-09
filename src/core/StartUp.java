@@ -66,7 +66,7 @@ public class StartUp {
 					}
 					
 					//progress bar?
-					//Thread.sleep(1000);
+					//Thread.sleep(2000);
 					
 					System.out.println("Loading finished...\n\t...Initialising the console and controller");
 					controller = new Controller(characters);

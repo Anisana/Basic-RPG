@@ -24,13 +24,13 @@ public class Console {
 		String input = "";
 		System.out.println("Console ready for input");
 		
-		/*Monster mob = new Monster();
+		Monster mob = new Monster();
 		mob.setName("Test Mob");
 		ItemGenerator gen = new ItemGenerator();
 		Item temp = gen.getNewItem("wieldableItem");
 		System.out.println(temp);
 		mob.equipItem(temp);
-		System.out.println(mob+"\n");*/
+		System.out.println(mob+"\n");
 		
 		
 		while(true){

@@ -21,6 +21,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.JScrollPane;
 
 public class CharacterCreationGUI extends JFrame {
 
