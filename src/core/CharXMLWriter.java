@@ -20,13 +20,13 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import unit.character.Character;
 import blocks.ArmourStatBlock;
 import blocks.CharacterStatBlock;
 import blocks.EquipmentBlock;
 import blocks.ItemStatBlock;
 import blocks.StatBlock;
 import blocks.WeaponStatBlock;
-import character.Character;
 
 public class CharXMLWriter {
 	

@@ -3,8 +3,11 @@ package core;
 import gui.CharacterCreationGUI;
 import gui.CharacterSelectionGUI;
 import gui.CharacterSheetGUI;
+import gui.CombatGUI;
 import gui.MapScreenGUI;
 import gui.StartScreenGUI;
+import item.Item;
+import item.ItemGenerator;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -18,15 +21,18 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-import character.Character;
+import unit.NPC;
+import unit.character.Character;
+import unit.monster.Monster;
 
 public class Controller {
 
 	//CharXMLReader charParser;
 	//GUI instances
-	CharacterSelectionGUI csGUI;
-	CharacterCreationGUI ccGUI;
-	MapScreenGUI msGUI;
+	private CharacterSelectionGUI csGUI;
+	private CharacterCreationGUI ccGUI;
+	private MapScreenGUI msGUI;
+	private CombatGUI cGUI;
 	
 	//Logic instances
 	CharacterCreationLogic ccLogic;
@@ -47,6 +53,11 @@ public class Controller {
 		csGUI = new CharacterSelectionGUI(characters, new CharSelectListListener(), new CharSelectPlayListener(), new CharSelectDeleteListener(), new CharSelectCreateListener());
 		csGUI.setVisible(true);
 	}
+	
+	private void showMapScreen(){
+		msGUI = new MapScreenGUI(currChar, new MapCharSheetListener(), new MapTestCombatListener());
+		msGUI.setVisible(true);
+	}
 
 //character selection screen	
 	class CharSelectListListener implements ActionListener{
@@ -63,9 +74,8 @@ public class Controller {
 	class CharSelectPlayListener implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			msGUI = new MapScreenGUI(currChar, new MapCharSheetListener());
+			showMapScreen();
 			csGUI.dispose();
-			msGUI.setVisible(true);
 		}
 	}
 	
@@ -154,10 +164,10 @@ public class Controller {
 				}
 				if(goal.equals("play")){
 					
-					msGUI = new MapScreenGUI(currChar, new MapCharSheetListener());
+					showMapScreen();
 					csGUI.dispose();
 					ccGUI.dispose();
-					msGUI.setVisible(true);
+					
 				}
 			}
 			else{
@@ -174,6 +184,24 @@ public class Controller {
 		public void actionPerformed(ActionEvent e) {
 			CharacterSheetGUI charSheet  = new CharacterSheetGUI(currChar);
 			charSheet.setVisible(true);
+		}
+	}
+	
+	class MapTestCombatListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			Monster mob = new Monster();
+			mob.setName("Test Mob");
+			ItemGenerator gen = new ItemGenerator();
+			Item temp = gen.getNewItem("wieldableItem");
+			mob.equipItem(temp);
+			System.out.println(mob);
+			System.out.println(temp+"\n");
+			
+			
+			cGUI = new CombatGUI(currChar, mob);
+			cGUI.setVisible(true);
+			//msGUI.dispose();
 		}
 	}
 

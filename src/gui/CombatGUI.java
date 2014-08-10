@@ -10,37 +10,24 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
-
-import character.Character;
 import javax.swing.JSeparator;
+
+import unit.character.Character;
+import unit.monster.Monster;
+
 import java.awt.Color;
 import java.awt.GridLayout;
-import javax.swing.JToolBar;
+import java.awt.FlowLayout;
 
 public class CombatGUI extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					CombatGUI frame = new CombatGUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private JPanel panelEnemyList;
 
 	/**
 	 * Create the frame.
 	 */
-	public CombatGUI() {
+	public CombatGUI(Character currChar, Monster currMonster) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 750);
 		contentPane = new JPanel();
@@ -53,7 +40,7 @@ public class CombatGUI extends JFrame {
 		contentPane.add(panelPlayer);
 		panelPlayer.setLayout(null);
 		
-		JPanel panelCharVitalStats = new CharacterVitalStatisticsPanel(new Character());
+		JPanel panelCharVitalStats = new CharacterVitalStatisticsPanel(currChar);
 		panelCharVitalStats.setBounds(0, 0, 225, 119);
 		panelPlayer.add(panelCharVitalStats);
 		
@@ -84,6 +71,11 @@ public class CombatGUI extends JFrame {
 		panelEnemies.setBounds(859, 0, 225, 712);
 		contentPane.add(panelEnemies);
 		
+		panelEnemyList = new JPanel();
+		panelEnemies.setViewportView(panelEnemyList);
+		panelEnemyList.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		fillEnemyList(currMonster);
+		
 		JPanel panelBoard = new JPanel();
 		panelBoard.setBounds(237, 30, 608, 608);
 		contentPane.add(panelBoard);
@@ -112,5 +104,9 @@ public class CombatGUI extends JFrame {
 		separator_1.setOrientation(SwingConstants.VERTICAL);
 		separator_1.setBounds(230, 11, 2, 690);
 		contentPane.add(separator_1);
+	}
+	
+	private void fillEnemyList(Monster currMonster){
+		panelEnemyList.add(new EnemyVitalStatisticsPanel(currMonster));
 	}
 }

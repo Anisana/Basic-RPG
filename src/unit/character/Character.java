@@ -1,5 +1,6 @@
-package character;
+package unit.character;
 
+import unit.Unit;
 import item.Bag;
 import item.Item;
 import item.WearableItem;
@@ -9,10 +10,10 @@ import blocks.EquipmentBlock;
 import blocks.StatBlock;
 
 
-public class Character {
+public class Character extends Unit{
 	
 	//Character's name
-	private String name;
+	//private String name;
 	
 	//Character's base stats
 	private CharacterStatBlock baseStats;
@@ -31,7 +32,8 @@ public class Character {
 	//default constructor
 	//use for character gen?
 	public Character(){
-		this.name = "";
+		super();
+		//this.name = "";
 		this.baseStats = new CharacterStatBlock();
 		this.equipment = new EquipmentBlock();
 		updateModifiedStats();
@@ -42,8 +44,8 @@ public class Character {
 	//used when loading a character from storage?
 	public Character(String name, CharacterStatBlock baseStats,
 			CharacterStatBlock modifiedStats, EquipmentBlock equipment, Bag bag) {
-		super();
-		this.name = name;
+		super(name);
+		//this.name = name;
 		this.baseStats = baseStats;
 		this.modifiedStats = modifiedStats;
 		this.equipment = equipment;
@@ -100,13 +102,13 @@ public class Character {
 		return this.bag;
 	}
 	
-	public void setName(String name){
+	/*public void setName(String name){
 		this.name = name;
 	}
 	
 	public String getName(){
 		return this.name;
-	}
+	}*/
 	
 	public CharacterStatBlock getBaseStats(){
 		return this.baseStats;
@@ -134,9 +136,14 @@ public class Character {
 
 	@Override
 	public String toString() {
-		return "Character [\n\tname = " + name + ",\n\tbaseStats = " + baseStats
+		return "Character [\n\t"+ super.toString() + ",\n\tbaseStats = " + baseStats
 				+ ",\n\tmodifiedStats = " + modifiedStats + ",\n\tequipment = "
 				+ equipment + ",\n\tbag = " + bag + "\n]\n" + equipment.getDefenceBlock().toString();
+	}
+
+	@Override
+	public boolean isNPC() {
+		return false;
 	}
 	
 	

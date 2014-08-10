@@ -18,10 +18,10 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
+import unit.character.Character;
 import blocks.CharacterStatBlock;
 import blocks.EquipmentBlock;
 import blocks.StatBlock;
-import character.Character;
 import enums.ArmourType;
 import enums.DamageType;
 import enums.ItemType;

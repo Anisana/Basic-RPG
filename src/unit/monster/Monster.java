@@ -1,27 +1,28 @@
-package monster;
+package unit.monster;
 
+import unit.NPC;
+import unit.Unit;
 import item.Item;
 import blocks.CharacterStatBlock;
 import blocks.EquipmentBlock;
 import blocks.MonsterStatBlock;
 import blocks.StatBlock;
 
-public class Monster {
+public class Monster extends Unit implements NPC{
 	
-	private String name;
 	private MonsterStatBlock baseStats;
 	private MonsterStatBlock modifiedStats;
 	private EquipmentBlock equipment;
 
 	public Monster() {
-		this.name = "";
+		super();
 		this.baseStats = new MonsterStatBlock();
 		this.equipment = new EquipmentBlock();
 		updateModifiedStats();
 	}
 	
 	public Monster(String name, int slotNum, double strength, double stamina, double constitution, double intelligence, double spirit, int level) {
-		this.name = name;
+		super(name);
 		this.baseStats = new MonsterStatBlock(strength, stamina, constitution, intelligence, spirit, level);
 		this.equipment = new EquipmentBlock();
 		updateModifiedStats();
@@ -46,13 +47,13 @@ public class Monster {
 		return false;
 	}
 
-	public String getName() {
+	/*public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
+	}*/
 
 	public MonsterStatBlock getBaseStats() {
 		return baseStats;
@@ -80,13 +81,18 @@ public class Monster {
 
 	@Override
 	public String toString() {
-		return "Monster [\n\tname = " + name + ",\n\tbaseStats = " + baseStats
+		return "Monster [\n\t" + super.toString() + ",\n\tbaseStats = " + baseStats
 				+ ",\n\tmodifiedStats = " + modifiedStats + ",\n\tequipment = "
 				+ equipment + "\n]";
 	}
 
-	
+	@Override
+	public boolean isNPC() {
+		return true;
+	}
 
+	
+	
 	
 	
 	

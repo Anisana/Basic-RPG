@@ -2,7 +2,8 @@ package blocks;
 
 public class MonsterStatBlock extends StatBlock {
 	
-	private double health;
+	private double totalHealth;
+	private double currentHealth;
 
 	public MonsterStatBlock() {
 		super();
@@ -16,13 +17,30 @@ public class MonsterStatBlock extends StatBlock {
 	}
 	
 	private void calcHealth() {
-		this.health = (getLevel()*10)+(getConstitution()*10);
-		this.health = Math.floor(health * 100) / 100;
+		this.totalHealth = (getLevel()*10)+(getConstitution()*10);
+		this.totalHealth = Math.floor(totalHealth * 100) / 100;
+		this.currentHealth = totalHealth;
+	}
+
+	public double getTotalHealth() {
+		return totalHealth;
+	}
+
+	public void setTotalHealth(double health) {
+		this.totalHealth = health;
+	}
+
+	public double getCurrentHealth() {
+		return currentHealth;
+	}
+
+	public void setCurrentHealth(double currentHealth) {
+		this.currentHealth = currentHealth;
 	}
 
 	@Override
 	public String toString() {
-		return "MonsterStatBlock [\n\t\t" + super.toString() + ",\n\t\thealth=" + health + "\n\t]";
+		return "MonsterStatBlock [\n\t\t" + super.toString() + ",\n\t\ttotal health = " + totalHealth + ", current health = " + currentHealth + "\n\t]";
 	}
 
 	

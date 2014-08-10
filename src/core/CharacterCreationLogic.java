@@ -1,7 +1,7 @@
 package core;
 
+import unit.character.Character;
 import blocks.CharacterStatBlock;
-import character.Character;
 
 public class CharacterCreationLogic {
 	

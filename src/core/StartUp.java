@@ -19,7 +19,7 @@ import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 import javax.swing.ToolTipManager;
 
-import character.Character;
+import unit.character.Character;
 
 public class StartUp {
 	

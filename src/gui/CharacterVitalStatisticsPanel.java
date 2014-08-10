@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-import character.Character;
+import unit.character.Character;
 
 public class CharacterVitalStatisticsPanel extends JPanel {
 	
@@ -82,6 +82,8 @@ public class CharacterVitalStatisticsPanel extends JPanel {
 		gbc_lblCurrentExp.gridx = 0;
 		gbc_lblCurrentExp.gridy = 5;
 		add(lblCurrentExp, gbc_lblCurrentExp);
+		
+		updateCharSheet();
 	}
 	
 	public void updateCharSheet(){

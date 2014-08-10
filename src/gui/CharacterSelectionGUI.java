@@ -14,7 +14,7 @@ import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.JLabel;
 
-import character.Character;
+import unit.character.Character;
 
 public class CharacterSelectionGUI extends JFrame {
 

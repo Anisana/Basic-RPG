@@ -14,16 +14,19 @@ import javax.swing.JMenuItem;
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import javax.swing.JScrollPane;
+
 import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+
 import javax.swing.JToggleButton;
+
+import unit.character.Character;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-import character.Character;
 
 public class MapScreenGUI extends JFrame {
 	
@@ -53,7 +56,7 @@ public class MapScreenGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MapScreenGUI(Character currChar, ActionListener charSheetAL) {
+	public MapScreenGUI(Character currChar, ActionListener charSheetAL, ActionListener testCombatL) {
 		//this.currChar = currChar;
 		
 		
@@ -76,6 +79,7 @@ public class MapScreenGUI extends JFrame {
 		panel.add(lblMap);
 		
 		JButton btnTestCombat = new JButton("Test combat");
+		btnTestCombat.addActionListener(testCombatL);
 		btnTestCombat.setBounds(494, 432, 117, 25);
 		panel.add(btnTestCombat);
 		

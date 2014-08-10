@@ -7,12 +7,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import monster.Monster;
+import unit.character.Character;
+import unit.monster.Monster;
 import item.Item;
 import item.ItemGenerator;
 import item.WearableItem;
 import item.WieldableItem;
-import character.Character;
 
 public class Console {
 
@@ -23,15 +23,6 @@ public class Console {
 		this.characters = characters;
 		String input = "";
 		System.out.println("Console ready for input");
-		
-		Monster mob = new Monster();
-		mob.setName("Test Mob");
-		ItemGenerator gen = new ItemGenerator();
-		Item temp = gen.getNewItem("wieldableItem");
-		System.out.println(temp);
-		mob.equipItem(temp);
-		System.out.println(mob+"\n");
-		
 		
 		while(true){
 			try{

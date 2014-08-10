@@ -1,6 +1,8 @@
 Class tree:
 
-Character
+Unit
+	Character
+	Monster
 
 StatBlock
 	ItemStatBlock
@@ -17,10 +19,7 @@ Item
 	WearableItem
 	WieldableItem
 	
-ItemSlot
 
 Enums
-
-Monster
 
 CharacterSheetGUI
