@@ -1,5 +1,6 @@
 package unit.monster;
 
+import enums.NPCActionType;
 import unit.NPC;
 import unit.Unit;
 import item.Item;
@@ -89,6 +90,12 @@ public class Monster extends Unit implements NPC{
 	@Override
 	public boolean isNPC() {
 		return true;
+	}
+
+	@Override
+	public NPCActionType getAction() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
