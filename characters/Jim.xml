@@ -7,41 +7,58 @@
     <constitution value="4.0"/>
     <intelligence value="2.0"/>
     <spirit value="0.0"/>
-    <level value="1"/>
+    <level value="3"/>
     <totalHealth value="50.0"/>
     <currentHealth value="50.0"/>
-    <healthRegenRate value="5.8"/>
+    <healthRegenRate value="2.3"/>
     <totalFocus value="30.0"/>
-    <currentFocus value="30.0"/>
-    <focusRegenRate value="5.8"/>
+    <currentFocus value="15.0"/>
+    <focusRegenRate value="2.3"/>
     <totalMana value="15.0"/>
     <currentMana value="15.0"/>
-    <manaRegenRate value="5.0"/>
+    <manaRegenRate value="1.5"/>
     <carryCapacity value="0.0"/>
-    <experience value="0"/>
-    <levelBoundry value="100"/>
+    <experience value="460"/>
+    <levelBoundary value="600"/>
   </baseStats>
   <modifiedStats>
     <strength value="5.0"/>
-    <stamina value="4.0"/>
-    <constitution value="4.0"/>
+    <stamina value="7.3"/>
+    <constitution value="7.3"/>
     <intelligence value="2.0"/>
     <spirit value="0.0"/>
-    <level value="1"/>
-    <totalHealth value="50.0"/>
-    <currentHealth value="50.0"/>
-    <healthRegenRate value="5.8"/>
-    <totalFocus value="30.0"/>
-    <currentFocus value="30.0"/>
-    <focusRegenRate value="5.8"/>
-    <totalMana value="15.0"/>
-    <currentMana value="15.0"/>
-    <manaRegenRate value="5.0"/>
+    <level value="3"/>
+    <totalHealth value="103.0"/>
+    <currentHealth value="76.94"/>
+    <healthRegenRate value="2.96"/>
+    <totalFocus value="40.0"/>
+    <currentFocus value="40.0"/>
+    <focusRegenRate value="2.96"/>
+    <totalMana value="25.0"/>
+    <currentMana value="25.0"/>
+    <manaRegenRate value="1.5"/>
     <carryCapacity value="0.0"/>
-    <experience value="0"/>
-    <levelBoundry value="100"/>
+    <experience value="460"/>
+    <levelBoundary value="600"/>
   </modifiedStats>
-  <equipment/>
+  <equipment>
+    <wieldableItem>
+      <name value="Fire Sword of Stamina"/>
+      <slotNum value="12"/>
+      <strength value="0.0"/>
+      <stamina value="3.3"/>
+      <constitution value="3.3"/>
+      <intelligence value="0.0"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="SWORD"/>
+      <handsRequired value="1"/>
+      <damageType value="FIRE"/>
+      <minDamage value="7.73"/>
+      <maxDamage value="10.49"/>
+    </wieldableItem>
+  </equipment>
   <bag>
     <size value="20"/>
   </bag>

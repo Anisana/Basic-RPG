@@ -1,19 +1,20 @@
 package unit.character;
 
-import unit.Unit;
+import java.util.ArrayList;
+
+import enums.SkillType;
+import path.Path;
+import path.Skill;
+import gui.CharacterVitalStatisticsPanel;
 import item.Bag;
 import item.Item;
-import item.WearableItem;
-import item.WieldableItem;
+import unit.Unit;
 import blocks.CharacterStatBlock;
 import blocks.EquipmentBlock;
 import blocks.StatBlock;
 
 
 public class Character extends Unit{
-	
-	//Character's name
-	//private String name;
 	
 	//Character's base stats
 	private CharacterStatBlock baseStats;
@@ -28,6 +29,10 @@ public class Character extends Unit{
 	//Character's bag
 	private Bag bag;
 	
+	//active skills
+	private ArrayList<Skill> activeSkills;
+	
+	private CharacterVitalStatisticsPanel vsPanel;
 	
 	//default constructor
 	//use for character gen?
@@ -38,11 +43,13 @@ public class Character extends Unit{
 		this.equipment = new EquipmentBlock();
 		updateModifiedStats();
 		this.bag = new Bag();
+		this.activeSkills = new ArrayList<Skill>();
+		this.vsPanel = new CharacterVitalStatisticsPanel(this);
 	}
 	
 	//full argument constructor
 	//used when loading a character from storage?
-	public Character(String name, CharacterStatBlock baseStats,
+	/*public Character(String name, CharacterStatBlock baseStats,
 			CharacterStatBlock modifiedStats, EquipmentBlock equipment, Bag bag) {
 		super(name);
 		//this.name = name;
@@ -50,6 +57,19 @@ public class Character extends Unit{
 		this.modifiedStats = modifiedStats;
 		this.equipment = equipment;
 		this.bag = bag;
+		this.vsPanel = new CharacterVitalStatisticsPanel(this);
+	}*/
+	
+	public Character(String name, CharacterStatBlock baseStats,
+			CharacterStatBlock modifiedStats, EquipmentBlock equipment,
+			Bag bag, Path path, ArrayList<Skill> activeSkills) {
+		super(name, path);
+		this.baseStats = baseStats;
+		this.modifiedStats = modifiedStats;
+		this.equipment = equipment;
+		this.bag = bag;
+		this.activeSkills = activeSkills;
+		this.vsPanel = new CharacterVitalStatisticsPanel(this);
 	}
 
 
@@ -63,28 +83,13 @@ public class Character extends Unit{
 		double intel = baseStats.getIntelligence() + temp.getIntelligence();
 		double spi = baseStats.getSpirit() + temp.getSpirit();
 		
-		modifiedStats = new CharacterStatBlock(str, sta, con, intel, spi, baseStats.getLevel(), baseStats.getExperience(), baseStats.getLevelBoundry());
+		modifiedStats = new CharacterStatBlock(str, sta, con, intel, spi, baseStats.getLevel(), baseStats.getExperience(), 
+				baseStats.getLevelBoundary(), baseStats.getMovementSpeed());
 	}
-	
-	/*public boolean placeInBag(WearableItem item){
-		return this.bag.placeItem(item);
-	}
-	
-	public boolean placeInBag(WieldableItem item){
-		return this.bag.placeItem(item);
-	}*/
 	
 	public boolean placeInBag(Item item){
 		return this.bag.placeItem(item);
 	}
-	
-	/*public boolean equipItem(WearableItem item){
-		return this.equipment.equipItem(item);
-	}
-	
-	public boolean equipItem(WieldableItem item){
-		return this.equipment.equipItem(item);
-	}*/
 	
 	public boolean equipItem(Item item){
 		if(this.equipment.equipItem(item)){
@@ -101,14 +106,6 @@ public class Character extends Unit{
 	public Bag getBag(){
 		return this.bag;
 	}
-	
-	/*public void setName(String name){
-		this.name = name;
-	}
-	
-	public String getName(){
-		return this.name;
-	}*/
 	
 	public CharacterStatBlock getBaseStats(){
 		return this.baseStats;
@@ -133,6 +130,32 @@ public class Character extends Unit{
 	public void setEquipment(EquipmentBlock block){
 		this.equipment = block;
 	}
+	
+	public ArrayList<Skill> getActiveSkills() {
+		return activeSkills;
+	}
+
+	public void setActiveSkills(ArrayList<Skill> activeSkills) {
+		this.activeSkills = activeSkills;
+	}
+
+	public CharacterVitalStatisticsPanel getVSPanel(){
+		return this.vsPanel;
+	}
+	
+	public void setActiveSkills(/*list of skills*/){
+		this.activeSkills = new ArrayList<Skill>();
+		int i = 0;
+		for(Skill s : this.getPath().getSkills()){
+			if(s.getType() == SkillType.ATTACK || s.getType() == SkillType.SPELL){
+				//System.out.println("Adding skill: " + s);
+				this.activeSkills.add(s);
+				i++;
+				
+				if(i == 10) return;
+			}
+		}
+	}
 
 	@Override
 	public String toString() {
@@ -141,11 +164,84 @@ public class Character extends Unit{
 				+ equipment + ",\n\tbag = " + bag + "\n]\n" + equipment.getDefenceBlock().toString();
 	}
 
-	@Override
-	public boolean isNPC() {
+	
+//Combat related methods
+	public boolean hasSufficientResources(int skillNumber){
+		switch(activeSkills.get(skillNumber).getResource()){
+		case "focus":
+			if(modifiedStats.getCurrentFocus() >= activeSkills.get(skillNumber).getResourceCost()) return true;
+		case "mana":
+			if(modifiedStats.getCurrentMana() >= activeSkills.get(skillNumber).getResourceCost()) return true;
+		case "none":
+			return true;
+		}
 		return false;
 	}
 	
+	public void useResources(int skillNumber){
+		switch(activeSkills.get(skillNumber).getResource()){
+		case "focus":
+			modifiedStats.setCurrentFocus(modifiedStats.getCurrentFocus() - activeSkills.get(skillNumber).getResourceCost());
+			break;
+		case "mana":
+			modifiedStats.setCurrentMana(modifiedStats.getCurrentMana() - activeSkills.get(skillNumber).getResourceCost());
+			break;
+		}
+	}
 	
+	@Override
+	public double getDamage(int skillNumber){
+		Skill tempSkill = activeSkills.get(skillNumber);
+		double damage = 0;
+		
+		if(tempSkill != null){
+			damage = tempSkill.rollDamage(this);
+		}
+		
+		
+		return damage;
+	}
+
+	@Override
+	public boolean takeDamage(double baseDamage) {
+		//TODO implement armour
+		
+		this.modifiedStats.setCurrentHealth(this.modifiedStats.getCurrentHealth() - baseDamage);
+		
+		if(this.modifiedStats.getCurrentHealth() <= 0.0){
+			this.modifiedStats.setCurrentHealth(0.0);
+			return false; //dead
+		}
+		
+		return true; //alive
+	}
 	
+	@Override
+	public void updateVSPanel(){
+		this.vsPanel.updateCharSheet();
+	}
+
+	@Override
+	public boolean giveExperience(int exp) {
+		boolean temp = this.baseStats.giveExp(exp);
+		this.modifiedStats.giveExp(exp);
+		//updateModifiedStats();
+		return temp;
+	}
+
+	@Override
+	public void regenResources() {
+		//take into account any fast regen things?
+		
+		this.modifiedStats.setCurrentHealth(this.modifiedStats.getCurrentHealth() + this.modifiedStats.getHealthRegenRate());
+		this.modifiedStats.setCurrentFocus(this.modifiedStats.getCurrentFocus() + this.modifiedStats.getFocusRegenRate());
+		this.modifiedStats.setCurrentMana(this.modifiedStats.getCurrentMana() + this.modifiedStats.getManaRegenRate());
+	}
+	
+	@Override
+	public void cooldownSkills(){
+		for(Skill s : activeSkills){
+			s.cooldown();
+		}
+	}
 }

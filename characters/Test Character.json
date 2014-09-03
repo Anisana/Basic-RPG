@@ -1,0 +1,217 @@
+{
+  "baseStats": {
+    "totalHealth": 160.0,
+    "currentHealth": 160.0,
+    "healthRegenRate": 3.5,
+    "totalFocus": 5.0,
+    "currentFocus": 5.0,
+    "focusRegenRate": 0.5,
+    "totalMana": 5.0,
+    "currentMana": 5.0,
+    "manaRegenRate": 0.5,
+    "carryCapacity": 0.0,
+    "experience": 10,
+    "levelBoundary": 100,
+    "strength": 0.0,
+    "stamina": 0.0,
+    "constitution": 15.0,
+    "intelligence": 0.0,
+    "spirit": 0.0,
+    "level": 1
+  },
+  "modifiedStats": {
+    "totalHealth": 193.0,
+    "currentHealth": 140.25,
+    "healthRegenRate": 4.16,
+    "totalFocus": 5.0,
+    "currentFocus": 5.0,
+    "focusRegenRate": 0.5,
+    "totalMana": 21.5,
+    "currentMana": 21.5,
+    "manaRegenRate": 0.5,
+    "carryCapacity": 0.0,
+    "experience": 10,
+    "levelBoundary": 100,
+    "strength": 0.0,
+    "stamina": 0.0,
+    "constitution": 18.3,
+    "intelligence": 3.3,
+    "spirit": 0.0,
+    "level": 1
+  },
+  "equipment": {
+    "equipment": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "type": "WieldableItem",
+        "properties": {
+          "stats": {
+            "handsRequired": 1,
+            "damageType": "ARCANE",
+            "minDamage": 5.84,
+            "maxDamage": 6.77,
+            "weight": 0.0,
+            "type": "SWORD",
+            "strength": 0.0,
+            "stamina": 0.0,
+            "constitution": 3.3,
+            "intelligence": 3.3,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Arcane Sword of Constitution",
+          "slotNum": 12
+        }
+      },
+      null
+    ]
+  },
+  "bag": {
+    "maxSize": 20,
+    "bag": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "activeSkills": [
+    {
+      "name": "Basic Attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 1,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Another basic attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 1,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Yet another basic attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 1,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    }
+  ],
+  "name": "Test Character",
+  "path": {
+    "name": "Test Path",
+    "description": "A description",
+    "skills": [
+      {
+        "name": "Basic Attack",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "shape": "circle",
+        "shapeSize": 1,
+        "range": 1,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Another basic attack",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "shape": "circle",
+        "shapeSize": 1,
+        "range": 1,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Yet another basic attack",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "shape": "circle",
+        "shapeSize": 1,
+        "range": 1,
+        "effects": null,
+        "spawnedObject": null
+      }
+    ],
+    "owner": "all"
+  }
+}

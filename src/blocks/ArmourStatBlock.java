@@ -64,7 +64,6 @@ public class ArmourStatBlock extends ItemStatBlock {
 	}
 
 	public void calcArmourValue(double baseArmourValue){
-		double lvl = new Integer(getLevel()).doubleValue();
 		
 		switch (this.armourMaterial){
 		case METAL: this.armourValue = baseArmourValue*1.5;  break;

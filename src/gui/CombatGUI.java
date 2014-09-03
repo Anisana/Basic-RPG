@@ -6,28 +6,42 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
+import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 
+import path.Skill;
 import unit.character.Character;
 import unit.monster.Monster;
+import world.CombatSquare;
+import world.Encounter;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import java.util.Enumeration;
 
 public class CombatGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel panelEnemyList;
+	private JPanel panelBoard;
+	private JPanel panelActions;
+	private ButtonGroup actionGroup;
 
 	/**
 	 * Create the frame.
 	 */
-	public CombatGUI(Character currChar, Monster currMonster) {
+	public CombatGUI(Character currChar, Encounter currEncounter, Monster currMonster, 
+			ActionListener charActionL, MouseListener gridMouseL, ActionListener passTurnL) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 750);
 		contentPane = new JPanel();
@@ -40,7 +54,7 @@ public class CombatGUI extends JFrame {
 		contentPane.add(panelPlayer);
 		panelPlayer.setLayout(null);
 		
-		JPanel panelCharVitalStats = new CharacterVitalStatisticsPanel(currChar);
+		JPanel panelCharVitalStats = currChar.getVSPanel();
 		panelCharVitalStats.setBounds(0, 0, 225, 119);
 		panelPlayer.add(panelCharVitalStats);
 		
@@ -48,13 +62,13 @@ public class CombatGUI extends JFrame {
 		separator.setBounds(10, 130, 205, 2);
 		panelPlayer.add(separator);
 		
-		JPanel panelActions = new JPanel();
+		panelActions = new JPanel();
 		panelActions.setBounds(0, 143, 225, 370);
 		panelPlayer.add(panelActions);
 		panelActions.setLayout(new GridLayout(10, 1, 5, 0));
 		
-		JButton btnBasicAttack = new JButton("Basic Attack");
-		panelActions.add(btnBasicAttack);
+		
+		fillActionPanel(currChar, charActionL);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(10, 524, 205, 2);
@@ -76,12 +90,12 @@ public class CombatGUI extends JFrame {
 		panelEnemyList.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		fillEnemyList(currMonster);
 		
-		JPanel panelBoard = new JPanel();
-		panelBoard.setBounds(237, 30, 608, 608);
+		panelBoard = new JPanel();
+		panelBoard.setBounds(240, 30, 608, 608);
 		contentPane.add(panelBoard);
+		panelBoard.setLayout(new GridLayout(19, 19, 0, 0));
 		
-		JLabel lblPlayGrid = new JLabel("Play grid");
-		panelBoard.add(lblPlayGrid);
+		drawGrid(currEncounter.getGrid(), gridMouseL);
 		
 		JLabel lblTitle = new JLabel("- Title -");
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
@@ -89,7 +103,7 @@ public class CombatGUI extends JFrame {
 		contentPane.add(lblTitle);
 		
 		JButton btnCharacterSheet = new JButton("Character Sheet");
-		btnCharacterSheet.setBounds(235, 649, 130, 23);
+		btnCharacterSheet.setBounds(240, 648, 130, 23);
 		contentPane.add(btnCharacterSheet);
 		
 		JLabel lblTurnNumber = new JLabel("- Turn Number -");
@@ -97,16 +111,53 @@ public class CombatGUI extends JFrame {
 		contentPane.add(lblTurnNumber);
 		
 		JButton btnQuestLog = new JButton("Quest Log");
-		btnQuestLog.setBounds(235, 678, 98, 23);
+		btnQuestLog.setBounds(240, 677, 98, 23);
 		contentPane.add(btnQuestLog);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setOrientation(SwingConstants.VERTICAL);
 		separator_1.setBounds(230, 11, 2, 690);
 		contentPane.add(separator_1);
+		
+		JButton btnPassTurn = new JButton("Pass Turn");
+		btnPassTurn.setBounds(750, 648, 97, 23);
+		btnPassTurn.addActionListener(passTurnL);
+		contentPane.add(btnPassTurn);
 	}
 	
 	private void fillEnemyList(Monster currMonster){
-		panelEnemyList.add(new EnemyVitalStatisticsPanel(currMonster));
+		//panelEnemyList.add(new EnemyVitalStatisticsPanel(currMonster));
+		panelEnemyList.add(currMonster.getVSPanel());
+	}
+	
+	private void drawGrid(CombatSquare[][] grid, MouseListener gridMouseL){
+		for(int i = 0; i < 19; i++){
+			for(int j = 0; j < 19; j++){
+				grid[i][j].setPreferredSize(new Dimension(32, 32));
+				grid[i][j].addMouseListener(gridMouseL);
+				panelBoard.add(grid[i][j]);
+			}
+		}
+	}
+	
+	private void fillActionPanel(Character currChar, ActionListener listener){
+		//ArrayList<Skill>
+		actionGroup = new ButtonGroup();
+		JToggleButton temp;
+		int i = 0;
+		for(Skill s : currChar.getActiveSkills()){
+			temp = new JToggleButton(s.getName());
+			temp.putClientProperty("index", i);
+			temp.addActionListener(listener);
+			actionGroup.add(temp);
+			panelActions.add(temp);
+			i++;
+			
+			if(i == 10) return;
+		}
+	}
+	
+	public void resetActionButtons(){
+		actionGroup.clearSelection();
 	}
 }

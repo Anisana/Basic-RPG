@@ -1,5 +1,8 @@
 package core;
 
+import item.Item;
+import item.ItemGenerator;
+import path.Path;
 import unit.character.Character;
 import blocks.CharacterStatBlock;
 
@@ -7,7 +10,7 @@ public class CharacterCreationLogic {
 	
 	private CharacterStatBlock stats;
 	private String name;
-	private String path; //TODO implement
+	private Path path;
 	private int remainingPoints;
 
 	public CharacterCreationLogic() {
@@ -49,7 +52,7 @@ public class CharacterCreationLogic {
 		this.name = name;
 	}
 	
-	public void setPath(String path){
+	public void setPath(Path path){
 		this.path = path;
 	}
 	
@@ -75,11 +78,18 @@ public class CharacterCreationLogic {
 		temp.setBaseStats(stats);
 		temp.updateModifiedStats();
 		temp.setName(name);
+		temp.setPath(path);
+		temp.setActiveSkills();
+		
+		ItemGenerator gen = new ItemGenerator();
+		Item tempItem = gen.getNewItem("wieldableItem");
+		temp.equipItem(tempItem);
+		
 		return temp;
 	}
 	
 	public boolean isReady(){
-		if(!this.name.equals("") && !this.path.equals("") && remainingPoints == 0){
+		if(!this.name.equals("") && this.path != null && remainingPoints == 0){
 			return true;
 		}
 		return false;

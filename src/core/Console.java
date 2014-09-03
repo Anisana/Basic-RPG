@@ -16,11 +16,14 @@ import item.WieldableItem;
 
 public class Console {
 
-	private ArrayList<Character> characters;
+	//private ArrayList<Character> characters;
 	private ArrayList<Item> items = new ArrayList<Item>();
+	
+	private DataStore data;
 
-	public Console(ArrayList<Character> characters) {
-		this.characters = characters;
+	public Console(DataStore data) {
+		//this.characters = characters;
+		this.data = data;
 		String input = "";
 		System.out.println("Console ready for input");
 		
@@ -85,7 +88,7 @@ public class Console {
 		Character newChar = new Character();
 		boolean successful = true;
 		if(command.length == 2){
-			characters.add(newChar);
+			data.addCharacter(newChar);
 			System.out.println("Character created");
 			return;
 		}
@@ -99,7 +102,7 @@ public class Console {
 		}
 
 		if(successful){
-			characters.add(newChar);
+			data.addCharacter(newChar);
 			System.out.println("Character '" + newChar.getName() + "' created");
 		}
 	}
@@ -151,10 +154,10 @@ public class Console {
 	}
 
 	private void printChars(){
-		int size = characters.size();
+		int size = data.getCharacters().size();
 		System.out.print("[");
 		for(int i = 0; i < size; i++){
-			System.out.print(i + "=" + characters.get(i).getName());
+			System.out.print(i + "=" + data.getCharacters().get(i).getName());
 			if(i < size-1){
 				System.out.print(", ");
 			}
@@ -170,7 +173,7 @@ public class Console {
 		for(int i = 2; i < command.length; i++){
 			switch(command[i]){
 			case "-a": printChars(); break;
-			case "-i": System.out.println(characters.get(Integer.parseInt(command[++i])).toString()); break;
+			case "-i": System.out.println(data.getCharacters().get(Integer.parseInt(command[++i])).toString()); break;
 			case "-n": 
 				Character temp = getChar(command[++i]);
 				if(temp != null) System.out.println(temp.toString());
@@ -183,7 +186,7 @@ public class Console {
 	}
 
 	private Character getChar(String name){
-		for(Character c : characters){
+		for(Character c : data.getCharacters()){
 			if(c.getName().equals(name)){
 				return c;
 			}
@@ -245,7 +248,7 @@ public class Console {
 			return;
 		}
 		switch(command[1]){
-		case "-i": tempChar = characters.get(Integer.parseInt(command[2])); break;
+		case "-i": tempChar = data.getCharacters().get(Integer.parseInt(command[2])); break;
 		case "-n": tempChar = getChar(command[2]); break; 
 		default:
 			System.out.println("Invalid option: '" + command[1] + "'"); 
@@ -288,7 +291,7 @@ public class Console {
 		}
 
 		switch(command[1]){
-		case "-i": equipChar = characters.get(Integer.parseInt(command[2])); break;
+		case "-i": equipChar = data.getCharacters().get(Integer.parseInt(command[2])); break;
 		case "-n": equipChar = getChar(command[2]); break;
 		default:
 			System.out.println("Invalid option: '" + command[1] + "'"); 
@@ -343,7 +346,7 @@ public class Console {
 		}
 
 		switch(command[1]){
-		case "-i": tempChar = characters.get(Integer.parseInt(command[2])); break;
+		case "-i": tempChar = data.getCharacters().get(Integer.parseInt(command[2])); break;
 		case "-n": tempChar = getChar(command[2]); break;
 		default:
 			System.out.println("Invalid option: '" + command[1] + "'");
@@ -374,7 +377,7 @@ public class Console {
 		CharXMLReader parser = new CharXMLReader();
 		
 		Character temp = parser.parse(file.getAbsolutePath());
-		characters.add(temp);
+		data.getCharacters().add(temp);
 		
 		System.out.println("Successfully loaded '" + temp.getName() + "'");
 	}

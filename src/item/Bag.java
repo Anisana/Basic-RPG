@@ -3,8 +3,8 @@ package item;
 public class Bag {
 	
 	private int maxSize = 20; //TODO change when multiple bags are a thing
-	private WearableItem []armour = new WearableItem[20];
-	private WieldableItem []weapons = new WieldableItem[20];
+	//private WearableItem []armour = new WearableItem[20];
+	//private WieldableItem []weapons = new WieldableItem[20];
 	private Item[] bag = new Item[20];
 
 	public Bag() {

@@ -1,0 +1,151 @@
+{
+  "baseStats": {
+    "totalHealth": 50.0,
+    "currentHealth": 50.0,
+    "healthRegenRate": 2.3,
+    "totalFocus": 30.0,
+    "currentFocus": 15.0,
+    "focusRegenRate": 2.3,
+    "totalMana": 15.0,
+    "currentMana": 15.0,
+    "manaRegenRate": 1.5,
+    "carryCapacity": 0.0,
+    "experience": 460,
+    "levelBoundary": 600,
+	"movementSpeed": 6,
+    "strength": 5.0,
+    "stamina": 4.0,
+    "constitution": 4.0,
+    "intelligence": 2.0,
+    "spirit": 0.0,
+    "level": 3
+  },
+  "modifiedStats": {
+    "totalHealth": 103.0,
+    "currentHealth": 76.94,
+    "healthRegenRate": 2.96,
+    "totalFocus": 40.0,
+    "currentFocus": 40.0,
+    "focusRegenRate": 2.96,
+    "totalMana": 25.0,
+    "currentMana": 25.0,
+    "manaRegenRate": 1.5,
+    "carryCapacity": 0.0,
+    "experience": 460,
+    "levelBoundary": 600,
+	"movementSpeed": 6,
+    "strength": 5.0,
+    "stamina": 7.3,
+    "constitution": 7.3,
+    "intelligence": 2.0,
+    "spirit": 0.0,
+    "level": 3
+  },
+  "equipment": {
+    "equipment": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      {
+        "type": "WieldableItem",
+        "properties": {
+          "stats": {
+            "handsRequired": 1,
+            "damageType": "FIRE",
+            "minDamage": 7.73,
+            "maxDamage": 10.49,
+            "weight": 0.0,
+            "type": "SWORD",
+            "strength": 0.0,
+            "stamina": 3.3,
+            "constitution": 3.3,
+            "intelligence": 0.0,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Fire Sword of Stamina",
+          "slotNum": 12
+        }
+      },
+      null
+    ]
+  },
+  "bag": {
+    "maxSize": 20,
+    "bag": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "activeSkills": [
+    {
+      "name": "Basic Attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 1,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    }
+  ],
+  "name": "Jim",
+  "path": {
+    "name": "Default Path",
+    "description": "Default Path, only used when something went wrong",
+    "skills": [
+      {
+        "name": "Basic Attack",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "shape": "circle",
+        "shapeSize": 1,
+        "range": 1,
+        "effects": null,
+        "spawnedObject": null
+      }
+    ],
+    "owner": "all"
+  }
+}

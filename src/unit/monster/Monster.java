@@ -1,6 +1,8 @@
 package unit.monster;
 
+import path.Path;
 import enums.NPCActionType;
+import gui.EnemyVitalStatisticsPanel;
 import unit.NPC;
 import unit.Unit;
 import item.Item;
@@ -14,19 +16,23 @@ public class Monster extends Unit implements NPC{
 	private MonsterStatBlock baseStats;
 	private MonsterStatBlock modifiedStats;
 	private EquipmentBlock equipment;
+	
+	private EnemyVitalStatisticsPanel vsPanel;
 
 	public Monster() {
 		super();
 		this.baseStats = new MonsterStatBlock();
 		this.equipment = new EquipmentBlock();
 		updateModifiedStats();
+		this.vsPanel = new EnemyVitalStatisticsPanel(this);
 	}
 	
 	public Monster(String name, int slotNum, double strength, double stamina, double constitution, double intelligence, double spirit, int level) {
-		super(name);
+		super(name, new Path());
 		this.baseStats = new MonsterStatBlock(strength, stamina, constitution, intelligence, spirit, level);
 		this.equipment = new EquipmentBlock();
 		updateModifiedStats();
+		this.vsPanel = new EnemyVitalStatisticsPanel(this);
 	}
 	
 	public void updateModifiedStats(){
@@ -47,6 +53,15 @@ public class Monster extends Unit implements NPC{
 		}
 		return false;
 	}
+	
+	@Override
+	public void updateVSPanel(){
+		this.vsPanel.updateEnemyPane();
+	}
+	
+	public EnemyVitalStatisticsPanel getVSPanel(){
+		return this.vsPanel;
+	}
 
 	/*public String getName() {
 		return name;
@@ -64,6 +79,7 @@ public class Monster extends Unit implements NPC{
 		this.baseStats = stats;
 	}
 
+	//@Override
 	public MonsterStatBlock getModifiedStats() {
 		return modifiedStats;
 	}
@@ -86,10 +102,10 @@ public class Monster extends Unit implements NPC{
 				+ ",\n\tmodifiedStats = " + modifiedStats + ",\n\tequipment = "
 				+ equipment + "\n]";
 	}
-
+	
 	@Override
-	public boolean isNPC() {
-		return true;
+	public int getBaseExpValue(){
+		return this.modifiedStats.getLevel() * 10;
 	}
 
 	@Override
@@ -98,10 +114,51 @@ public class Monster extends Unit implements NPC{
 		return null;
 	}
 
+	@Override
+	public boolean takeDamage(double baseDamage) {
+		
+		//implement armour
+		
+		this.modifiedStats.setCurrentHealth(this.modifiedStats.getCurrentHealth() - baseDamage);
+		
+		if(this.modifiedStats.getCurrentHealth() <= 0.0){
+			this.modifiedStats.setCurrentHealth(0.0);
+			return false; //dead
+		}
+		
+		return true; //alive
+	}
+
+	//temp
+	@Override
+	public double getDamage(int skillNumber){
+		if(this.equipment.getWeapon() != null){
+			double damage = Math.random() * this.equipment.getWeapon().getStats().getDamageRange();
+			damage += this.equipment.getWeapon().getStats().getMinDamage();
+			damage *= (1 + this.modifiedStats.getStrength()/100);
+			
+			return damage;
+		}
+		System.out.println("Current monster has no weapon");
+		return Math.random();
+	}
+
+	@Override
+	public boolean giveExperience(int exp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void regenResources() {
+		// TODO Auto-generated method stub
+		
+	}
 	
-	
-	
-	
+	@Override
+	public void cooldownSkills(){
+		// TODO Auto-generated method stub
+	}
 	
 
 }

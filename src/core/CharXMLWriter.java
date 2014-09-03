@@ -146,8 +146,8 @@ public class CharXMLWriter {
 		temp.setAttribute("value", statBlock.getExperience()+"");
 		parent.appendChild(temp);
 		
-		temp = doc.createElement("levelBoundry");
-		temp.setAttribute("value", statBlock.getLevelBoundry()+"");
+		temp = doc.createElement("levelBoundary");
+		temp.setAttribute("value", statBlock.getLevelBoundary()+"");
 		parent.appendChild(temp);
 	}
 	

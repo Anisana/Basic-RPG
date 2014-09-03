@@ -62,6 +62,10 @@ public class WeaponStatBlock extends ItemStatBlock {
 	public void setMaxDamage(double maxDamage) {
 		this.maxDamage = Math.floor(maxDamage * 100) / 100;
 	}
+	
+	public double getDamageRange(){
+		return this.maxDamage - this.minDamage;
+	}
 
 	@Override
 	public String toString() {

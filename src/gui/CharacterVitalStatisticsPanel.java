@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+import com.google.gson.annotations.SerializedName;
+
 import unit.character.Character;
 
 public class CharacterVitalStatisticsPanel extends JPanel {
@@ -16,11 +18,17 @@ public class CharacterVitalStatisticsPanel extends JPanel {
 	private Character currChar;
 	
 	//private JLayeredPane panelCharSheet;
+	//@SerializedName("charName")
 	private JLabel lblName;
+	//@SerializedName("charPathLine")
 	private JLabel lblPathLine;
+	//@SerializedName("charCurrentHP")
 	private JLabel lblCurrentHP;
+	//@SerializedName("charCurrentFocus")
 	private JLabel lblCurrentFocus;
+	//@SerializedName("charCurrentMana")
 	private JLabel lblCurrentMana;
+	//@SerializedName("charCurrentExp")
 	private JLabel lblCurrentExp;
 
 	/**
@@ -88,11 +96,11 @@ public class CharacterVitalStatisticsPanel extends JPanel {
 	
 	public void updateCharSheet(){
 		lblName.setText(" " + currChar.getName());
-		lblPathLine.setText(" Level " + currChar.getModifiedStats().getLevel() + " blah");
+		lblPathLine.setText(" Level " + currChar.getModifiedStats().getLevel() + " " + currChar.getPath().getName());
 		lblCurrentHP.setText("Current HP: " + currChar.getModifiedStats().getCurrentHealth() + " / "  + currChar.getModifiedStats().getTotalHealth());
 		lblCurrentFocus.setText("Current Focus: " + currChar.getModifiedStats().getCurrentFocus() + " / "  + currChar.getModifiedStats().getTotalFocus());
 		lblCurrentMana.setText("Current Mana: " + currChar.getModifiedStats().getCurrentMana() + " / "  + currChar.getModifiedStats().getTotalMana());
-		lblCurrentExp.setText("Current EXP: " + currChar.getModifiedStats().getExperience() + " / "  + currChar.getModifiedStats().getLevelBoundry());
+		lblCurrentExp.setText("Current EXP: " + currChar.getModifiedStats().getExperience() + " / "  + currChar.getModifiedStats().getLevelBoundary());
 	}
 
 }

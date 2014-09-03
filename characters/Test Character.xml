@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character>
+  <name value="Test Character"/>
+  <baseStats>
+    <strength value="0.0"/>
+    <stamina value="0.0"/>
+    <constitution value="15.0"/>
+    <intelligence value="0.0"/>
+    <spirit value="0.0"/>
+    <level value="1"/>
+    <totalHealth value="160.0"/>
+    <currentHealth value="160.0"/>
+    <healthRegenRate value="3.5"/>
+    <totalFocus value="5.0"/>
+    <currentFocus value="5.0"/>
+    <focusRegenRate value="0.5"/>
+    <totalMana value="5.0"/>
+    <currentMana value="5.0"/>
+    <manaRegenRate value="0.5"/>
+    <carryCapacity value="0.0"/>
+    <experience value="10"/>
+    <levelBoundary value="100"/>
+  </baseStats>
+  <modifiedStats>
+    <strength value="0.0"/>
+    <stamina value="0.0"/>
+    <constitution value="18.3"/>
+    <intelligence value="3.3"/>
+    <spirit value="0.0"/>
+    <level value="1"/>
+    <totalHealth value="193.0"/>
+    <currentHealth value="140.25"/>
+    <healthRegenRate value="4.16"/>
+    <totalFocus value="5.0"/>
+    <currentFocus value="5.0"/>
+    <focusRegenRate value="0.5"/>
+    <totalMana value="21.5"/>
+    <currentMana value="21.5"/>
+    <manaRegenRate value="0.5"/>
+    <carryCapacity value="0.0"/>
+    <experience value="10"/>
+    <levelBoundary value="100"/>
+  </modifiedStats>
+  <equipment>
+    <wieldableItem>
+      <name value="Arcane Sword of Constitution"/>
+      <slotNum value="12"/>
+      <strength value="0.0"/>
+      <stamina value="0.0"/>
+      <constitution value="3.3"/>
+      <intelligence value="3.3"/>
+      <spirit value="0.0"/>
+      <level value="1"/>
+      <weight value="0.0"/>
+      <type value="SWORD"/>
+      <handsRequired value="1"/>
+      <damageType value="ARCANE"/>
+      <minDamage value="5.84"/>
+      <maxDamage value="6.77"/>
+    </wieldableItem>
+  </equipment>
+  <bag>
+    <size value="20"/>
+  </bag>
+</character>

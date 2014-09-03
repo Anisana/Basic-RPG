@@ -17,17 +17,20 @@ import javax.swing.JTextField;
 
 import java.awt.Insets;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JComboBox;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 
+import path.Path;
+
 public class CharacterCreationGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtName;
-	private JComboBox cbPath;
+	private JComboBox<Path> cbPath;
 	private JButton strUP;
 	private JButton strDOWN;
 	private JLabel lblStrValue;
@@ -48,7 +51,7 @@ public class CharacterCreationGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CharacterCreationGUI(ActionListener statUpL, ActionListener statDownL, ActionListener createL) {
+	public CharacterCreationGUI(ArrayList<Path> paths, ActionListener statUpL, ActionListener statDownL, ActionListener createL) {
 		setTitle("Character Creation");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 400, 460);
@@ -56,7 +59,7 @@ public class CharacterCreationGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JPanel panelTop = new JPanel();
 		panelTop.setBounds(12, 13, 358, 49);
 		contentPane.add(panelTop);
@@ -66,7 +69,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbl_panelTop.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
 		gbl_panelTop.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
 		panelTop.setLayout(gbl_panelTop);
-		
+
 		JLabel lblName = new JLabel("Name:");
 		GridBagConstraints gbc_lblName = new GridBagConstraints();
 		gbc_lblName.anchor = GridBagConstraints.EAST;
@@ -74,7 +77,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_lblName.gridx = 0;
 		gbc_lblName.gridy = 0;
 		panelTop.add(lblName, gbc_lblName);
-		
+
 		txtName = new JTextField();
 		GridBagConstraints gbc_txtName = new GridBagConstraints();
 		gbc_txtName.insets = new Insets(0, 0, 5, 0);
@@ -83,7 +86,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_txtName.gridy = 0;
 		panelTop.add(txtName, gbc_txtName);
 		txtName.setColumns(10);
-		
+
 		JLabel lblPath = new JLabel("Path:");
 		GridBagConstraints gbc_lblPath = new GridBagConstraints();
 		gbc_lblPath.anchor = GridBagConstraints.EAST;
@@ -91,14 +94,14 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_lblPath.gridx = 0;
 		gbc_lblPath.gridy = 1;
 		panelTop.add(lblPath, gbc_lblPath);
-		
-		cbPath = new JComboBox();
+
+		cbPath = prepareComboBox(paths);
 		GridBagConstraints gbc_cbPath = new GridBagConstraints();
 		gbc_cbPath.fill = GridBagConstraints.HORIZONTAL;
 		gbc_cbPath.gridx = 1;
 		gbc_cbPath.gridy = 1;
 		panelTop.add(cbPath, gbc_cbPath);
-		
+
 		JPanel panelStats = new JPanel();
 		panelStats.setBounds(12, 104, 358, 157);
 		contentPane.add(panelStats);
@@ -108,7 +111,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbl_panelStats.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gbl_panelStats.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		panelStats.setLayout(gbl_panelStats);
-		
+
 		JLabel lblStrength = new JLabel("Strength:");
 		GridBagConstraints gbc_lblStrength = new GridBagConstraints();
 		gbc_lblStrength.anchor = GridBagConstraints.WEST;
@@ -116,7 +119,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_lblStrength.gridx = 0;
 		gbc_lblStrength.gridy = 0;
 		panelStats.add(lblStrength, gbc_lblStrength);
-		
+
 		strUP = new JButton("+");
 		strUP.putClientProperty("stat", "strength");
 		strUP.addActionListener(statUpL);
@@ -125,7 +128,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_strUP.gridx = 1;
 		gbc_strUP.gridy = 0;
 		panelStats.add(strUP, gbc_strUP);
-		
+
 		strDOWN = new JButton("-");
 		strDOWN.putClientProperty("stat", "strength");
 		strDOWN.addActionListener(statDownL);
@@ -135,14 +138,14 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_strDOWN.gridx = 2;
 		gbc_strDOWN.gridy = 0;
 		panelStats.add(strDOWN, gbc_strDOWN);
-		
+
 		lblStrValue = new JLabel("0.0");
 		GridBagConstraints gbc_lblStrValue = new GridBagConstraints();
 		gbc_lblStrValue.insets = new Insets(0, 0, 5, 0);
 		gbc_lblStrValue.gridx = 3;
 		gbc_lblStrValue.gridy = 0;
 		panelStats.add(lblStrValue, gbc_lblStrValue);
-		
+
 		JLabel lblStamina = new JLabel("Stamina:");
 		GridBagConstraints gbc_lblStamina = new GridBagConstraints();
 		gbc_lblStamina.anchor = GridBagConstraints.WEST;
@@ -150,7 +153,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_lblStamina.gridx = 0;
 		gbc_lblStamina.gridy = 1;
 		panelStats.add(lblStamina, gbc_lblStamina);
-		
+
 		staUP = new JButton("+");
 		staUP.putClientProperty("stat", "stamina");
 		staUP.addActionListener(statUpL);
@@ -159,7 +162,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_staUP.gridx = 1;
 		gbc_staUP.gridy = 1;
 		panelStats.add(staUP, gbc_staUP);
-		
+
 		staDOWN = new JButton("-");
 		staDOWN.putClientProperty("stat", "stamina");
 		staDOWN.addActionListener(statDownL);
@@ -169,14 +172,14 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_staDOWN.gridx = 2;
 		gbc_staDOWN.gridy = 1;
 		panelStats.add(staDOWN, gbc_staDOWN);
-		
+
 		lblStaValue = new JLabel("0.0");
 		GridBagConstraints gbc_lblStaValue = new GridBagConstraints();
 		gbc_lblStaValue.insets = new Insets(0, 0, 5, 0);
 		gbc_lblStaValue.gridx = 3;
 		gbc_lblStaValue.gridy = 1;
 		panelStats.add(lblStaValue, gbc_lblStaValue);
-		
+
 		JLabel lblConstitution = new JLabel("Constitution:");
 		GridBagConstraints gbc_lblConstitution = new GridBagConstraints();
 		gbc_lblConstitution.anchor = GridBagConstraints.WEST;
@@ -184,7 +187,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_lblConstitution.gridx = 0;
 		gbc_lblConstitution.gridy = 2;
 		panelStats.add(lblConstitution, gbc_lblConstitution);
-		
+
 		conUP = new JButton("+");
 		conUP.putClientProperty("stat", "constitution");
 		conUP.addActionListener(statUpL);
@@ -193,7 +196,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_conUP.gridx = 1;
 		gbc_conUP.gridy = 2;
 		panelStats.add(conUP, gbc_conUP);
-		
+
 		conDOWN = new JButton("-");
 		conDOWN.putClientProperty("stat", "constitution");
 		conDOWN.addActionListener(statDownL);
@@ -203,14 +206,14 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_conDOWN.gridx = 2;
 		gbc_conDOWN.gridy = 2;
 		panelStats.add(conDOWN, gbc_conDOWN);
-		
+
 		lblConValue = new JLabel("0.0");
 		GridBagConstraints gbc_lblConValue = new GridBagConstraints();
 		gbc_lblConValue.insets = new Insets(0, 0, 5, 0);
 		gbc_lblConValue.gridx = 3;
 		gbc_lblConValue.gridy = 2;
 		panelStats.add(lblConValue, gbc_lblConValue);
-		
+
 		JLabel lblIntelligence = new JLabel("Intelligence:");
 		GridBagConstraints gbc_lblIntelligence = new GridBagConstraints();
 		gbc_lblIntelligence.insets = new Insets(0, 0, 5, 5);
@@ -218,7 +221,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_lblIntelligence.gridx = 0;
 		gbc_lblIntelligence.gridy = 3;
 		panelStats.add(lblIntelligence, gbc_lblIntelligence);
-		
+
 		intUP = new JButton("+");
 		intUP.putClientProperty("stat", "intelligence");
 		intUP.addActionListener(statUpL);
@@ -227,7 +230,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_intUP.gridx = 1;
 		gbc_intUP.gridy = 3;
 		panelStats.add(intUP, gbc_intUP);
-		
+
 		intDOWN = new JButton("-");
 		intDOWN.putClientProperty("stat", "intelligence");
 		intDOWN.addActionListener(statDownL);
@@ -237,14 +240,14 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_intDOWN.gridx = 2;
 		gbc_intDOWN.gridy = 3;
 		panelStats.add(intDOWN, gbc_intDOWN);
-		
+
 		lblIntValue = new JLabel("0.0");
 		GridBagConstraints gbc_lblIntValue = new GridBagConstraints();
 		gbc_lblIntValue.insets = new Insets(0, 0, 5, 0);
 		gbc_lblIntValue.gridx = 3;
 		gbc_lblIntValue.gridy = 3;
 		panelStats.add(lblIntValue, gbc_lblIntValue);
-		
+
 		JLabel lblSpirit = new JLabel("Spirit:");
 		GridBagConstraints gbc_lblSpirit = new GridBagConstraints();
 		gbc_lblSpirit.insets = new Insets(0, 0, 0, 5);
@@ -252,7 +255,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_lblSpirit.gridx = 0;
 		gbc_lblSpirit.gridy = 4;
 		panelStats.add(lblSpirit, gbc_lblSpirit);
-		
+
 		spiUP = new JButton("+");
 		spiUP.putClientProperty("stat", "spirit");
 		spiUP.addActionListener(statUpL);
@@ -261,7 +264,7 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_spiUP.gridx = 1;
 		gbc_spiUP.gridy = 4;
 		panelStats.add(spiUP, gbc_spiUP);
-		
+
 		spiDOWN = new JButton("-");
 		spiDOWN.putClientProperty("stat", "spirit");
 		spiDOWN.addActionListener(statDownL);
@@ -271,30 +274,44 @@ public class CharacterCreationGUI extends JFrame {
 		gbc_spiDOWN.gridx = 2;
 		gbc_spiDOWN.gridy = 4;
 		panelStats.add(spiDOWN, gbc_spiDOWN);
-		
+
 		lblSpiValue = new JLabel("0.0");
 		GridBagConstraints gbc_lblSpiValue = new GridBagConstraints();
 		gbc_lblSpiValue.gridx = 3;
 		gbc_lblSpiValue.gridy = 4;
 		panelStats.add(lblSpiValue, gbc_lblSpiValue);
-		
+
 		lblPointsRemaining = new JLabel("Points Remaining: 15");
 		lblPointsRemaining.setBounds(12, 75, 138, 16);
 		contentPane.add(lblPointsRemaining);
-		
+
 		JButton btnCreateAndPlay = new JButton("Create and Play");
 		btnCreateAndPlay.putClientProperty("goal", "play");
 		btnCreateAndPlay.addActionListener(createL);
 		btnCreateAndPlay.setBounds(247, 377, 123, 25);
 		contentPane.add(btnCreateAndPlay);
-		
+
 		JButton btnCreate = new JButton("Create");
 		btnCreate.putClientProperty("goal", "create");
 		btnCreate.addActionListener(createL);
 		btnCreate.setBounds(138, 377, 97, 25);
 		contentPane.add(btnCreate);
 	}
-	
+
+	private JComboBox<Path> prepareComboBox(ArrayList<Path> paths){
+		JComboBox<Path> result = new JComboBox<Path>();
+
+		for(Path p : paths){
+			if(p != null){
+				if(p.getOwner().equals("all") || p.getOwner().equals("player")){
+					result.addItem(p);
+				}
+			}
+		}
+
+		return result;
+	}
+
 	public void disableIncrementButtons(){
 		strUP.setEnabled(false);
 		staUP.setEnabled(false);
@@ -302,7 +319,7 @@ public class CharacterCreationGUI extends JFrame {
 		intUP.setEnabled(false);
 		spiUP.setEnabled(false);
 	}
-	
+
 	public void enableIncrementButtons(){
 		strUP.setEnabled(true);
 		staUP.setEnabled(true);
@@ -310,7 +327,7 @@ public class CharacterCreationGUI extends JFrame {
 		intUP.setEnabled(true);
 		spiUP.setEnabled(true);
 	}
-	
+
 	public void disableDecrementButton(String stat){
 		switch(stat){
 		case "strength": strDOWN.setEnabled(false); return;
@@ -320,7 +337,7 @@ public class CharacterCreationGUI extends JFrame {
 		case "spirit": spiDOWN.setEnabled(false); return;
 		}
 	}
-	
+
 	public void enableDecrementButton(String stat){
 		switch(stat){
 		case "strength": strDOWN.setEnabled(true); return;
@@ -330,11 +347,11 @@ public class CharacterCreationGUI extends JFrame {
 		case "spirit": spiDOWN.setEnabled(true); return;
 		}
 	}
-	
+
 	public void setRemainingPoints(int points){
 		this.lblPointsRemaining.setText("Points remaining: " + points);
 	}
-	
+
 	public void setStatTotal(String stat, double total){
 		switch(stat){
 		case "strength": lblStrValue.setText(total+""); return;
@@ -344,13 +361,12 @@ public class CharacterCreationGUI extends JFrame {
 		case "spirit": lblSpiValue.setText(total+""); return;
 		}
 	}
-	
+
 	public String getName(){
 		return this.txtName.getText();
 	}
-	
-	//TODO placeholder
-	public String getPath(){
-		return "";
+
+	public Path getPath(){
+		return (Path) cbPath.getSelectedItem();
 	}
 }

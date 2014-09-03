@@ -35,7 +35,7 @@ public class MonsterStatBlock extends StatBlock {
 	}
 
 	public void setCurrentHealth(double currentHealth) {
-		this.currentHealth = currentHealth;
+		this.currentHealth = Math.floor(currentHealth * 100) / 100;
 	}
 
 	@Override

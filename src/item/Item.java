@@ -118,6 +118,6 @@ public abstract class Item {
 
 	
 	
-	abstract public StatBlock getStats();
+	public abstract StatBlock getStats();
 	
 }

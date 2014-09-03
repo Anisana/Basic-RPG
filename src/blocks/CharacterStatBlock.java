@@ -27,20 +27,26 @@ public class CharacterStatBlock extends StatBlock {
 	private int experience;
 	
 	// The amount of experience that will cause the character to level up
-	private int levelBoundry;
+	private int levelBoundary;
+	
+	// The number of squares the character can move in a turn
+	private int movementSpeed;
 
 	public CharacterStatBlock(){
 		super();
 		updateDependableStats();
 		this.experience = 0;
-		this.levelBoundry = 100;
+		this.levelBoundary = 100;
+		this.movementSpeed = 6;
 	}
 	
-	public CharacterStatBlock(double strength, double stamina, double constitution, double intelligence, double spirit, int level, int experience, int levelBoundry) {
+	public CharacterStatBlock(double strength, double stamina, double constitution, 
+			double intelligence, double spirit, int level, int experience, int levelBoundary, int movementSpeed) {
 		super(strength, stamina, constitution, intelligence, spirit, level);
 		updateDependableStats();
 		this.experience = experience;
-		this.levelBoundry = levelBoundry;
+		this.levelBoundary = levelBoundary;
+		this.movementSpeed = movementSpeed;
 	}
 	
 	public void updateDependableStats(){
@@ -70,13 +76,13 @@ public class CharacterStatBlock extends StatBlock {
 	}
 	
 	private void calcRegens(){
-		this.manaRegenRate = (getLevel()*5)+(getSpirit()*0.2);
+		this.manaRegenRate = (getLevel()*0.5)+(getSpirit()*0.2);
 		this.manaRegenRate = Math.floor(manaRegenRate * 100) / 100;
 		
-		this.focusRegenRate = (getLevel()*5)+(getStamina()*0.2);
+		this.focusRegenRate = (getLevel()*0.5)+(getStamina()*0.2);
 		this.focusRegenRate = Math.floor(focusRegenRate * 100) / 100;
 		
-		this.healthRegenRate = (getLevel()*5)+(getConstitution()*0.2);
+		this.healthRegenRate = (getLevel()*0.5)+(getConstitution()*0.2);
 		this.healthRegenRate = Math.floor(healthRegenRate * 100) / 100;
 	}
 	
@@ -84,12 +90,14 @@ public class CharacterStatBlock extends StatBlock {
 		
 	}
 	
-	public void giveExp(double exp){
+	public boolean giveExp(double exp){
 		experience += exp;
-		if(experience >= levelBoundry){
+		if(experience >= levelBoundary){
 			levelUp();
-			levelBoundry += getLevel()*100;
+			levelBoundary += getLevel()*100;
+			return true;
 		}
+		return false;
 	}
 	
 	private void levelUp(){
@@ -112,6 +120,9 @@ public class CharacterStatBlock extends StatBlock {
 
 	public void setCurrentHealth(double currentHealth) {
 		this.currentHealth = Math.floor(currentHealth * 100) / 100;
+		if(this.currentHealth > this.totalHealth){
+			this.currentHealth = this.totalHealth;
+		}
 	}
 
 	public double getTotalFocus() {
@@ -128,7 +139,9 @@ public class CharacterStatBlock extends StatBlock {
 
 	public void setCurrentFocus(double currentFocus) {
 		this.currentFocus = Math.floor(currentFocus * 100) / 100;
-		
+		if(this.currentFocus > this.totalFocus){
+			this.currentFocus = this.totalFocus;
+		}
 	}
 
 	public double getTotalMana() {
@@ -145,6 +158,9 @@ public class CharacterStatBlock extends StatBlock {
 
 	public void setCurrentMana(double currentMana) {
 		this.currentMana = Math.floor(currentMana * 100) / 100;
+		if(this.currentMana > this.totalMana){
+			this.currentMana = this.totalMana;
+		}
 	}
 
 	public double getHealthRegenRate() {
@@ -187,12 +203,20 @@ public class CharacterStatBlock extends StatBlock {
 		this.experience = experience;
 	}
 	
-	public int getLevelBoundry(){
-		return this.levelBoundry;
+	public int getLevelBoundary(){
+		return this.levelBoundary;
 	}
 
-	public void setLevelBoundry(int levelBoundry) {
-		this.levelBoundry = levelBoundry;
+	public void setLevelBoundary(int levelBoundary) {
+		this.levelBoundary = levelBoundary;
+	}
+
+	public int getMovementSpeed() {
+		return movementSpeed;
+	}
+
+	public void setMovementSpeed(int movementSpeed) {
+		this.movementSpeed = movementSpeed;
 	}
 
 	@Override
@@ -202,8 +226,8 @@ public class CharacterStatBlock extends StatBlock {
 				+ ",\n\t\ttotal focus = " + totalFocus + ", current focus = " + currentFocus + ", focusRegenRate = " + focusRegenRate
 				+ ",\n\t\ttotal mana = " + totalMana + ", current mana = " + currentMana + ", manaRegenRate = " + manaRegenRate
 				+ ",\n\t\tcarryCapacity = " + carryCapacity
-				+ ",\n\t\texperience = " + experience + ", levelBoundry = "
-				+ levelBoundry + "\n\t]";
+				+ ",\n\t\texperience = " + experience + ", levelBoundary = "
+				+ levelBoundary + "\n\t]";
 	}
 	
 }

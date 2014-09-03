@@ -141,7 +141,7 @@ public class CharXMLReader extends DefaultHandler{
 		case "focusRegenRate":
 		case "carryCapacity":
 		case "experience":
-		case "levelBoundry":
+		case "levelBoundary":
 		case "size":
 		case "slotNum":
 		case "type":
@@ -204,7 +204,7 @@ public class CharXMLReader extends DefaultHandler{
 		case "focusRegenRate": this.currStatBlock.setFocusRegenRate(Double.parseDouble(value)); break;
 		case "carryCapacity": this.currStatBlock.setCarryCapacity(Double.parseDouble(value)); break;
 		case "experience": this.currStatBlock.setExperience(Integer.parseInt(value)); break;
-		case "levelBoundry": this.currStatBlock.setLevelBoundry(Integer.parseInt(value)); break;
+		case "levelBoundary": this.currStatBlock.setLevelBoundary(Integer.parseInt(value)); break;
 		default:
 
 		}

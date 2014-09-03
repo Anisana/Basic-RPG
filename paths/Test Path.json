@@ -1,0 +1,160 @@
+{
+  "name": "Test Path",
+  "description": "A description",
+  "skills": [
+    {
+      "name": "Basic Attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 0,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Circle AoE attack 1",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 1,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+	{
+      "name": "Cone AoE attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "cone",
+      "shapeSize": 2,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+	{
+      "name": "Line AoE attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "line",
+      "shapeSize": 2,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+	{
+      "name": "Circle AoE attack 2",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 2,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+	{
+      "name": "Circle AoE attack 3",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 3,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+	{
+      "name": "Circle AoE attack 4",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 4,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+	{
+      "name": "Circle AoE attack 5",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 5,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+	{
+      "name": "Circle AoE attack 6",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "shape": "circle",
+      "shapeSize": 6,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    }
+  ],
+  "owner": "all"
+}

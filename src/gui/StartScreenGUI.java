@@ -63,8 +63,6 @@ public class StartScreenGUI extends JFrame{
 		lblBasicRpg.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBasicRpg.setBounds(167, 42, 97, 16);
 		contentPane.add(lblBasicRpg);
-		
-		//return frame;
 	}
 	
 	public void showStartBtn(){

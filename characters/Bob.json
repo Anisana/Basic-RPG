@@ -1,0 +1,683 @@
+{
+  "baseStats": {
+    "totalHealth": 10.0,
+    "currentHealth": 10.0,
+    "healthRegenRate": 1.6,
+    "totalFocus": 5.0,
+    "currentFocus": 5.0,
+    "focusRegenRate": 1.6,
+    "totalMana": 5.0,
+    "currentMana": 5.0,
+    "manaRegenRate": 1.6,
+    "carryCapacity": 0.0,
+    "experience": 766,
+    "levelBoundary": 1000,
+    "movementSpeed": 6,
+    "strength": 3.0,
+    "stamina": 3.0,
+    "constitution": 3.0,
+    "intelligence": 3.0,
+    "spirit": 3.0,
+    "level": 4
+  },
+  "modifiedStats": {
+    "totalHealth": 246.0,
+    "currentHealth": 246.0,
+    "healthRegenRate": 6.12,
+    "totalFocus": 134.0,
+    "currentFocus": 134.0,
+    "focusRegenRate": 7.0,
+    "totalMana": 106.5,
+    "currentMana": 106.5,
+    "manaRegenRate": 7.66,
+    "carryCapacity": 0.0,
+    "experience": 766,
+    "levelBoundary": 1000,
+    "movementSpeed": 6,
+    "strength": 22.8,
+    "stamina": 25.0,
+    "constitution": 20.6,
+    "intelligence": 17.3,
+    "spirit": 28.3,
+    "level": 4
+  },
+  "equipment": {
+    "equipment": [
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "METAL",
+            "armourValue": 11.81,
+            "resistType": "ARCANE",
+            "resistValue": 4.29,
+            "weight": 0.0,
+            "type": "HELM",
+            "strength": 5.5,
+            "stamina": 1.1,
+            "constitution": 0.0,
+            "intelligence": 5.5,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Metal Helm of Strength",
+          "slotNum": 0
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "LEATHER",
+            "armourValue": 4.62,
+            "resistType": "COLD",
+            "resistValue": 0.26,
+            "weight": 0.0,
+            "type": "SHOULDERS",
+            "strength": 5.5,
+            "stamina": 2.2,
+            "constitution": 0.0,
+            "intelligence": 0.0,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Leather Shoulders of Strength",
+          "slotNum": 1
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "LEATHER",
+            "armourValue": 7.51,
+            "resistType": "NONE",
+            "resistValue": 4.55,
+            "weight": 0.0,
+            "type": "AMULET",
+            "strength": 0.0,
+            "stamina": 5.5,
+            "constitution": 3.3,
+            "intelligence": 0.0,
+            "spirit": 3.3,
+            "level": 1
+          },
+          "name": "Leather Amulet of Stamina",
+          "slotNum": 2
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "CLOTH",
+            "armourValue": 2.8,
+            "resistType": "MAGIC",
+            "resistValue": 5.26,
+            "weight": 0.0,
+            "type": "CHEST",
+            "strength": 0.0,
+            "stamina": 0.0,
+            "constitution": 0.0,
+            "intelligence": 1.1,
+            "spirit": 5.5,
+            "level": 1
+          },
+          "name": "Cloth Chest of Spirit",
+          "slotNum": 3
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "CLOTH",
+            "armourValue": 4.03,
+            "resistType": "COLD",
+            "resistValue": 2.89,
+            "weight": 0.0,
+            "type": "BRACERS",
+            "strength": 0.0,
+            "stamina": 2.2,
+            "constitution": 3.3,
+            "intelligence": 0.0,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Cloth Bracers of Constitution",
+          "slotNum": 4
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "METAL",
+            "armourValue": 7.97,
+            "resistType": "FIRE",
+            "resistValue": 4.63,
+            "weight": 0.0,
+            "type": "GLOVES",
+            "strength": 0.0,
+            "stamina": 0.0,
+            "constitution": 0.0,
+            "intelligence": 2.2,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Metal Gloves of Intelligence",
+          "slotNum": 5
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "LEATHER",
+            "armourValue": 9.75,
+            "resistType": "FIRE",
+            "resistValue": 1.65,
+            "weight": 0.0,
+            "type": "BELT",
+            "strength": 0.0,
+            "stamina": 0.0,
+            "constitution": 2.2,
+            "intelligence": 5.5,
+            "spirit": 3.3,
+            "level": 1
+          },
+          "name": "Leather Belt of Intelligence",
+          "slotNum": 6
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "METAL",
+            "armourValue": 0.99,
+            "resistType": "BLUDGEONING",
+            "resistValue": 3.65,
+            "weight": 0.0,
+            "type": "GRIEVES",
+            "strength": 3.3,
+            "stamina": 2.2,
+            "constitution": 0.0,
+            "intelligence": 0.0,
+            "spirit": 3.3,
+            "level": 1
+          },
+          "name": "Metal Grieves of Strength",
+          "slotNum": 7
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "LEATHER",
+            "armourValue": 1.93,
+            "resistType": "ALL",
+            "resistValue": 5.46,
+            "weight": 0.0,
+            "type": "BOOTS",
+            "strength": 0.0,
+            "stamina": 0.0,
+            "constitution": 3.3,
+            "intelligence": 0.0,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Leather Boots of Constitution",
+          "slotNum": 8
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "CLOTH",
+            "armourValue": 1.23,
+            "resistType": "PIERCING",
+            "resistValue": 4.21,
+            "weight": 0.0,
+            "type": "RING",
+            "strength": 0.0,
+            "stamina": 0.0,
+            "constitution": 1.1,
+            "intelligence": 0.0,
+            "spirit": 5.5,
+            "level": 1
+          },
+          "name": "Cloth Ring of Spirit",
+          "slotNum": 9
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "METAL",
+            "armourValue": 1.6,
+            "resistType": "COLD",
+            "resistValue": 1.64,
+            "weight": 0.0,
+            "type": "RING",
+            "strength": 0.0,
+            "stamina": 0.0,
+            "constitution": 0.0,
+            "intelligence": 0.0,
+            "spirit": 4.4,
+            "level": 1
+          },
+          "name": "Metal Ring of Spirit",
+          "slotNum": 9
+        }
+      },
+      null,
+      {
+        "type": "WieldableItem",
+        "properties": {
+          "stats": {
+            "handsRequired": 1,
+            "damageType": "FIRE",
+            "minDamage": 7.73,
+            "maxDamage": 10.49,
+            "weight": 0.0,
+            "type": "SWORD",
+            "strength": 0.0,
+            "stamina": 3.3,
+            "constitution": 3.3,
+            "intelligence": 0.0,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Fire Sword of Stamina",
+          "slotNum": 12
+        }
+      },
+      {
+        "type": "WearableItem",
+        "properties": {
+          "stats": {
+            "armourMaterial": "CLOTH",
+            "armourValue": 1.84,
+            "resistType": "ALL",
+            "resistValue": 0.82,
+            "weight": 0.0,
+            "type": "SHIELD",
+            "strength": 5.5,
+            "stamina": 5.5,
+            "constitution": 1.1,
+            "intelligence": 0.0,
+            "spirit": 0.0,
+            "level": 1
+          },
+          "name": "Cloth Shield of Strength",
+          "slotNum": 13
+        }
+      }
+    ]
+  },
+  "bag": {
+    "maxSize": 20,
+    "bag": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "activeSkills": [
+    {
+      "name": "Basic Attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "circle",
+      "shapeSize": 0,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Circle AoE attack 1",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "circle",
+      "shapeSize": 1,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Cone AoE attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "cone",
+      "shapeSize": 2,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Line AoE attack",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "line",
+      "shapeSize": 2,
+      "range": 1,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Circle AoE attack 2",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "circle",
+      "shapeSize": 2,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Circle AoE attack 3",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "circle",
+      "shapeSize": 3,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Circle AoE attack 4",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "circle",
+      "shapeSize": 4,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Circle AoE attack 5",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "circle",
+      "shapeSize": 5,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    },
+    {
+      "name": "Circle AoE attack 6",
+      "description": "A basic melee attack",
+      "type": "ATTACK",
+      "subTypes": [
+        "DAMAGE"
+      ],
+      "resource": "none",
+      "resourceCost": 0.0,
+      "levelRequirement": 0,
+      "cooldown": 0,
+      "cooldownRemaining": 0,
+      "shape": "circle",
+      "shapeSize": 6,
+      "range": 7,
+      "effects": null,
+      "spawnedObject": null
+    }
+  ],
+  "name": "Bob",
+  "path": {
+    "name": "Test Path",
+    "description": "A description",
+    "skills": [
+      {
+        "name": "Basic Attack",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "circle",
+        "shapeSize": 0,
+        "range": 1,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Circle AoE attack 1",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "circle",
+        "shapeSize": 1,
+        "range": 7,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Cone AoE attack",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "cone",
+        "shapeSize": 2,
+        "range": 1,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Line AoE attack",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "line",
+        "shapeSize": 2,
+        "range": 1,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Circle AoE attack 2",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "circle",
+        "shapeSize": 2,
+        "range": 7,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Circle AoE attack 3",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "circle",
+        "shapeSize": 3,
+        "range": 7,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Circle AoE attack 4",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "circle",
+        "shapeSize": 4,
+        "range": 7,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Circle AoE attack 5",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "circle",
+        "shapeSize": 5,
+        "range": 7,
+        "effects": null,
+        "spawnedObject": null
+      },
+      {
+        "name": "Circle AoE attack 6",
+        "description": "A basic melee attack",
+        "type": "ATTACK",
+        "subTypes": [
+          "DAMAGE"
+        ],
+        "resource": "none",
+        "resourceCost": 0.0,
+        "levelRequirement": 0,
+        "cooldown": 0,
+        "cooldownRemaining": 0,
+        "shape": "circle",
+        "shapeSize": 6,
+        "range": 7,
+        "effects": null,
+        "spawnedObject": null
+      }
+    ],
+    "owner": "all"
+  },
+  "combatRow": 9,
+  "combatCol": 17
+}

@@ -7,19 +7,19 @@
     <constitution value="3.0"/>
     <intelligence value="3.0"/>
     <spirit value="3.0"/>
-    <level value="1"/>
+    <level value="4"/>
     <totalHealth value="10.0"/>
-	<currentHealth value="10.0"/>
-    <healthRegenRate value="5.0"/>
+    <currentHealth value="10.0"/>
+    <healthRegenRate value="1.6"/>
     <totalFocus value="5.0"/>
-	<currentFocus value="5.0"/>
-    <focusRegenRate value="5.0"/>
+    <currentFocus value="5.0"/>
+    <focusRegenRate value="1.6"/>
     <totalMana value="5.0"/>
-	<currentMana value="5.0"/>
-    <manaRegenRate value="5.0"/>
+    <currentMana value="5.0"/>
+    <manaRegenRate value="1.6"/>
     <carryCapacity value="0.0"/>
-    <experience value="0"/>
-    <levelBoundry value="100"/>
+    <experience value="766"/>
+    <levelBoundary value="1000"/>
   </baseStats>
   <modifiedStats>
     <strength value="22.8"/>
@@ -27,19 +27,19 @@
     <constitution value="20.6"/>
     <intelligence value="17.3"/>
     <spirit value="28.3"/>
-    <level value="1"/>
-    <totalHealth value="216.0"/>
-	<currentHealth value="216.0"/>
-    <healthRegenRate value="9.12"/>
-    <totalFocus value="119.0"/>
-	<currentFocus value="119.0"/>
-    <focusRegenRate value="10.0"/>
-    <totalMana value="91.5"/>
-	<currentMana value="91.5"/>
-    <manaRegenRate value="10.66"/>
+    <level value="4"/>
+    <totalHealth value="246.0"/>
+    <currentHealth value="246.0"/>
+    <healthRegenRate value="6.12"/>
+    <totalFocus value="134.0"/>
+    <currentFocus value="134.0"/>
+    <focusRegenRate value="7.0"/>
+    <totalMana value="106.5"/>
+    <currentMana value="106.5"/>
+    <manaRegenRate value="7.66"/>
     <carryCapacity value="0.0"/>
-    <experience value="0"/>
-    <levelBoundry value="100"/>
+    <experience value="766"/>
+    <levelBoundary value="1000"/>
   </modifiedStats>
   <equipment>
     <wearableItem>

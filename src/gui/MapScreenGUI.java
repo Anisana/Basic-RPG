@@ -147,7 +147,7 @@ public class MapScreenGUI extends JFrame {
 		panel.add(btnSettings);
 	}
 	
-	private void updateCharSheet(){
+	public void updateCharSheet(){
 		panelVitalStats.updateCharSheet();
 	}
 	
